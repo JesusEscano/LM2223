@@ -4,3 +4,4 @@ Bienvenidos al repositorio de **Jesús**. Aquí encontrarás todos los ejercicio
 - Ejercicios HTML
 - Ejercicios CSS
 - Ejercicios JS
+- Ejercicios de JQuery
