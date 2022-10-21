@@ -8,21 +8,22 @@
     </head>
     <body>
         <form name="RSS" method="post">
-            <label for="fname">Nombre:</label><br>
-            <input type="text" id="fname" placeholder="Nombre"><br>
-            <label for="lname">Apellidos:</label><br>
-            <input type="text" id="lname" placeholder="Apellidos"><br>
-            <label for="email">Correo Electrónico:</label><br>
-            <input type="email" id="email" placeholder="Correo Electrónico"><br>
-            <label for="date">Número de teléfono:</label><br>
-            <input type="tel" id="telef" pattern="[0-9]{2}-[0-9]{9}" required><br>
-            <label for="date">Fecha de nacimiento:</label><br>
+            <label for="fname"><strong>Nombre:</strong></label><br>
+            <input type="text" id="fname"><br>
+            <label for="lname"><strong>Apellidos:</strong></label><br>
+            <input type="text" id="lname"><br>
+            <label for="email"><strong>Correo Electrónico:</strong></label><br>
+            <input type="email" id="email"><br>
+            <label for="date"><strong>Número de teléfono:</strong></label><br>
+            <input type="tel" id="telef" pattern="[0-9]{9}" placeholder="000000000" required><br>
+            <label for="date"><strong>Fecha de nacimiento:</strong></label><br>
             <input type="date" id="birthdaytime" name="birthdaytime"><br>
-            <label for="sexo">Sexo:</label><br>
+            <label for="sexo"><strong>Sexo:</strong></label><br>
             <input type="radio" id="masc" name="sex" value="masc"><label for="masc">Masculino</label><br>
             <input type="radio" id="fem" name="sex" value="fem"><label for="fem">Femenino</label><br>
             <input type="radio" name="sex" value="nb"><label for="nb">No binario</label><br>
-            <label for="country">País de nacimiento:</label><span style="color: red !important; display: inline; float: none;"></span>      
+            <label for="country"><strong>País de nacimiento:</strong></label><br>
+            <span style="color: red !important; display: inline; float: none;"></span>      
             <select id="country" name="country" class="form-control">
                 <option value="Afghanistan">Afghanistan</option>
                 <option value="Åland Islands">Åland Islands</option>
@@ -269,9 +270,9 @@
                 <option value="Zambia">Zambia</option>
                 <option value="Zimbabwe">Zimbabwe</option>
             </select><br>
-            <label for="hobbies">Hobbies:</label><br>
+            <label for="hobbies"><strong>Hobbies:</strong></label><br>
             <input type="checkbox">
-            <label for="h1"> Cocina</label><br>
+            <label for="h1">Cocina</label><br>
             <input type="checkbox">
             <label for="h2">Pintura</label><br>
             <input type="checkbox">
@@ -286,11 +287,11 @@
             <label for="h7">Baile</label><br>
             <input type="checkbox">
             <label for="h8">Música</label><br>
-            <label for="favcolor">Color de ojos:</label>
+            <label for="favcolor"><strong>Color de ojos:</strong></label>
             <input type="color" id="favcolor" name="favcolor"><br>
-            <label for="file">Manda tu foto:</label>
+            <label for="file"><strong>Manda tu foto:</strong></label>
             <input type="file" name="adjunto" accept=".pdf,.jpg,.png" multiple /><br>
-            <label for="descr">Descríbete:</label><br>
+            <label for="descr"><strong>Descríbete:</strong></label><br>
             <textarea id="descr" placeholder="Escribe"></textarea><br>
             <input type="submit" value="Enviar">
             <input type="reset" value="Borrar todo">
