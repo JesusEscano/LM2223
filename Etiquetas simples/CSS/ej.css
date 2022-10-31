@@ -1,16 +1,17 @@
-.h1 {
+h1 {
     text-align: center;
     color: blue;
     font-size: 200;
 }
 
-.p {
+p {
     color: gray;
     text-align: left;
     margin-left: 20px;
+    border: 3px solid white
 }
 
-.body {
+body {
    background-image: url(https://img.freepik.com/free-vector/green-tones-gradient-background_23-2148376167.jpg?w=2000) ;
    background-repeat: repeat;
 }
