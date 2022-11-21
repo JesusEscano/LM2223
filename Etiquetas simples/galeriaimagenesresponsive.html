@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de imágenes</title>
+    <style>
+    .html, body {
+        height: 100vh;
+        margin:0;
+        padding:0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+    * {
+  box-sizing: border-box;
+}
+
+
+.header {
+  text-align: center;
+  padding: 25px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 5px;
+  vertical-align: middle;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Esta es la galería</h1>
+        <p>Puedes cambiar el tamaño para que cambie la ordenación.</p>
+      </div>
+      
+      <div class="row"> 
+        <div class="column">
+          <img src="Images/Retroitphotos_102098336_S.jpg" style="width:100%">
+          <img src="Images/Retroitphotos_107076828_S.jpg" style="width:100%">
+          <img src="Images/Retroitphotos_204309104_S.jpg" style="width:100%">
+          <img src="Images/Retroitphotos_244227136_S.jpg" style="width:100%">
+          <img src="Images/Retroitphotos_270810296_S.jpg" style="width:100%">
+          <img src="Images/Retroitphotos_33156807_S.jpg" style="width:100%">
+        </div>
+        
+        <div class="column">
+          <img src="Images/Retroitphotos_114837234_S.jpg" style="width:100%">
+          <img src="Images/Retroitphotos_194252274_S.jpg" style="width:100%">
+          <img src="Images/Retroitphotos_221234152_S.jpg" style="width:100%">
+          <img src="Images/Retroitphotos_253538316_S.jpg" style="width:100%">
+          <img src="Images/Retroitphotos_278236592_S.jpg" style="width:100%">
+          <img src="Images/Retroitphotos_338253734_S.jpg" style="width:100%">
+        </div> 
+         
+        <div class="column">
+          <img src="Images/Retroitphotos_154947198_S.jpg" style="width:100%">
+          <img src="Images/Retroitphotos_201514700_S.jpg" style="width:100%">
+          <img src="Images/Retroitphotos_204309104_S.jpg" style="width:100%">
+          <img src="Images/Retroitphotos_256505726_S.jpg" style="width:100%">
+          <img src="Images/Retroitphotos_27841869_S.jpg" style="width:100%">
+          <img src="Images/Retroitphotos_42966515_S.jpg" style="width:100%">
+        </div>
+        
+        <div class="column">
+          <img src="Images/Retroitphotos_167651868_S.jpg" style="width:100%">
+          <img src="Images/Retroitphotos_201724052_S.jpg" style="width:100%">
+          <img src="Images/Retroitphotos_228838476_S.jpg" style="width:100%">
+          <img src="Images/Retroitphotos_266951754_S.jpg" style="width:100%">
+          <img src="Images/Retroitphotos_320889086_S.jpg" style="width:100%">
+          <img src="Images/Retroitphotos_51800785_S.jpg" style="width:100%">
+        </div>
+      </div>
+</body>
+</html>
