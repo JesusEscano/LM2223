@@ -6,20 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Flexbox 1</title>
     <style>
+      .html, body {
+        height: 100vh;
+        margin:0;
+        padding:0;
+        overflow:hidden;
+      }
         .flex-container {
             display: flex;
-            min-height: 100vh;
   align-items: flex-start;
   background-color: white;
   flex-direction: row;
   align-content:space-between;
-  
 }
 
 .flex-container > div {
   color: white;
+  height: 100vh;
   width: 5%;
-  min-height: 100vh;
   margin: 0px;
   text-align: center;
   line-height: max-content;

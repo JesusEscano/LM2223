@@ -6,33 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Flexbox 5</title>
     <style>
+            .html, body {
+        height: 100vh;
+        margin:0;
+        padding:0;
+      }
         .flex-container {
             display: flex;
   align-items: flex-start;
   background-color: white;
   flex-direction: column;
   margin: 0px;
-  
+  height: 100vh;
+  justify-content: space-between;
 }
 
 .flex-container > div {
   color: white;
   width: 100%;
-  height: max-content;
+  height: auto;
   margin: 0px;
   text-align: center;
   font-size: 10px;}
 
-.flexbox-equalise:nth-child(1) { background-color: #1abc9c; margin-bottom: 4.75vh;}
-.flexbox-equalise:nth-child(2) { background: #3498db; margin-bottom: 4.75vh; margin-top: 4.75vh; }
-.flexbox-equalise:nth-child(3) { background: #9b59b6; margin-bottom: 4.75vh; margin-top: 4.75vh; }
-.flexbox-equalise:nth-child(4) { background: #34495e; margin-bottom: 4.75vh; margin-top: 4.75vh;}
-.flexbox-equalise:nth-child(5) { background: #f1c40f; margin-bottom: 4.75vh; margin-top: 4.75vh;}
-.flexbox-equalise:nth-child(6) { background: #e67e22; margin-bottom: 4.75vh; margin-top: 4.75vh;}
-.flexbox-equalise:nth-child(7) { background: #e74c3c; margin-bottom: 4.75vh; margin-top: 4.75vh;}
-.flexbox-equalise:nth-child(8) { background: #bdc3c7; margin-bottom: 4.75vh; margin-top: 4.75vh;}
-.flexbox-equalise:nth-child(9) { background: #2ecc71; margin-bottom: 4.75vh; margin-top: 4.75vh;}
-.flexbox-equalise:nth-child(10) { background: #16a085; margin-top: 4.75vh;}
+.flexbox-equalise:nth-child(1) { background-color: #1abc9c; }
+.flexbox-equalise:nth-child(2) { background: #3498db;   }
+.flexbox-equalise:nth-child(3) { background: #9b59b6;   }
+.flexbox-equalise:nth-child(4) { background: #34495e;  }
+.flexbox-equalise:nth-child(5) { background: #f1c40f;  }
+.flexbox-equalise:nth-child(6) { background: #e67e22;  }
+.flexbox-equalise:nth-child(7) { background: #e74c3c;  }
+.flexbox-equalise:nth-child(8) { background: #bdc3c7;  }
+.flexbox-equalise:nth-child(9) { background: #2ecc71;  }
+.flexbox-equalise:nth-child(10) { background: #16a085; }
 
 
 
