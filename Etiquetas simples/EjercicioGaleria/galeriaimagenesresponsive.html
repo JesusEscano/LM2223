@@ -5,64 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galería de imágenes</title>
-    <style>
-    .html, body {
-        height: 100vh;
-        margin:0;
-        padding:0;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-      }
-    * {
-  box-sizing: border-box;
-}
-
-
-.header {
-  text-align: center;
-  padding: 25px;
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 4px;
-}
-
-/* Create four equal columns that sits next to each other */
-.column {
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 4px;
-}
-
-.column img {
-  margin-top: 5px;
-  vertical-align: middle;
-}
-
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media (max-width: 800px) {
-  .column {
-    flex: 50%;
-    max-width: 50%;
-  }
-}
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media (max-width: 600px) {
-  .column {
-    flex: 100%;
-    max-width: 100%;
-  }
-}
-    </style>
+    <link rel="stylesheet" href="CSS/CSSGaleria.css">
 </head>
 <body>
     <div class="header">
         <h1>Esta es la galería</h1>
-        <p>Puedes cambiar el tamaño para que cambie la ordenación.</p>
+        <p>Adaptada a diferentes tamaños.</p>
       </div>
-      
       <div class="row"> 
         <div class="column">
           <img src="Images/Retroitphotos_102098336_S.jpg" style="width:100%">
