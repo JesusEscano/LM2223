@@ -39,6 +39,10 @@ table {
 img {
   border:#017efc solid 3px;
 }
+
+.noborde img {
+border: 0px;
+  }
   
   /* Ese cuerpo */
   .body {
@@ -82,8 +86,10 @@ img {
     flex: 30%;
     background-color: #aaa;
     padding: 20px;
+    font-size: 25px;
+    vertical-align: top;
     text-align: center;
-    color:white;
+    color:black;
   }
   .entrc {
     text-align: center;
@@ -114,6 +120,7 @@ img {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: medium;
     padding: 5px;
+    text-align: justify;
 }
 
   
