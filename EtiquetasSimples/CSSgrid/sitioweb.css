@@ -1,0 +1,44 @@
+body {
+    background-color: lightgoldenrodyellow;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.caja {
+    border: solid black 4px;
+    background-color: lightgray;
+    text-align: center;
+}
+
+.contenedor {
+    display: grid;
+grid-template-areas: 'cabecera cabecera' 'menu menu' 'contenido banners' 'pie pie';
+grid-template-rows: 10% 20% auto 10%;
+grid-template-columns: auto auto;
+justify-content: stretch;
+}
+
+.cabecera {
+background-color: lightskyblue;
+grid-area: cabecera;
+height: 10%;
+}
+.c2 {
+background-color: lightgoldenrodyellow;
+grid-area: menu;
+height: 20%;
+}
+.c3 {
+background-color: lightsalmon;
+grid-area: contenido;
+height:auto;
+}
+.c4 {
+background-color: lightseagreen;
+grid-area: banners;
+height:auto;
+}
+.c5 {
+background-color: lightcyan;
+grid-area: pie;
+height:10%;
+}
