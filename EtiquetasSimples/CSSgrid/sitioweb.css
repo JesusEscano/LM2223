@@ -4,9 +4,22 @@ body {
     text-align: center;
 }
 .caja {
+    display: flex;
     border: solid black 4px;
     background-color: lightgray;
     text-align: center;
+    line-height: 150px;
+    justify-content: center;
+    align-items: center;
+}
+
+.relleno {
+    width: 80%;
+    height: 84%;
+    padding: 20px;
+    border: dashed black 2px;
+    background-color: lightgray;
+    margin: 0 auto;
 }
 
 .contenedor {
@@ -20,25 +33,25 @@ justify-content: stretch;
 .cabecera {
 background-color: lightskyblue;
 grid-area: cabecera;
-height: 10%;
+
 }
-.c2 {
+.menu {
 background-color: lightgoldenrodyellow;
 grid-area: menu;
-height: 20%;
+
 }
-.c3 {
+.contenido {
 background-color: lightsalmon;
 grid-area: contenido;
-height:auto;
+
 }
-.c4 {
+.banners {
 background-color: lightseagreen;
 grid-area: banners;
-height:auto;
+
 }
-.c5 {
+.pie {
 background-color: lightcyan;
 grid-area: pie;
-height:10%;
+
 }
