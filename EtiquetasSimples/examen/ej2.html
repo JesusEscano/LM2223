@@ -9,34 +9,38 @@
     <link href='https://fonts.googleapis.com/css?family=Open Sans Condensed:300' rel='stylesheet'>
 </head>
 <body>
-    <h1>Crea tu personaje</h1>
-    <div class="formulario">
-        <p>Por favor, rellenena este formulario.</p>
-       <form name="creacion" method="post">
-        <table cellpadding="0" cellspacing="0" width="100%">
-        <tr><td width="40%"><label for="fname">Nombre:</label></td>
-            <td width="60%"><input type="text" id="fname" placeholder="Escribe el nombre de tu personaje"></td></tr>
-             <tr><td width="40%"><label for="poderes">¿Tiene poderes especiales?</label>
-                <td width="60%"> <input type="checkbox"></tr>
+    <header><h1>Crea tu personaje</h1></header>
+   
+        <form action="#" method="post" enctype='multipart/form-data'>
+        <fieldset>
+            <legend>Por favor, rellena este formulario.</legend>
+            <div>
+      <label for="fname">Nombre:</label>
+         <input type="text" id="fname" placeholder="Escribe el nombre de tu personaje...">
+         <label for="colorfavorito">¿Tiene poderes especiales?</label>
+         <input id="colorfavorito" type="checkbox" name="locks">
             
-                    <tr><td width="40%"><label for="favcolor">Color favorito</label>
-                <td width="60%"> <input type="color" id="favcolor" name="favcolor"></tr>
-                    <tr><td width="40%"><label for="descr">Descripción del mismo</label>
-                <td width="60%"> <input type="text" id="descr"></tr>
-                    <tr><td width="40%"><label for="mail">Email de su tribu</label>
-                <td width="60%"> <input type="text" id="mail"></tr>
-                    <tr><td width="40%"><label for="date">Nacimiento</label>
-                    <td width="60%">  <input type="date" id="birthdaytime" name="birthdaytime"></p>
-                        <tr> <td width="40%"> <label for="bando">Bando</label>
-                        <td width="60%">   <select name="bando" id="lang">
+                    <label for="favcolor">Color favorito</label>
+              <input type="color" id="favcolor" name="favcolor">
+                  <label for="descr">Descripción del mismo</label>
+               <input type="text" id="descr">
+                 <label for="mail">Email de su tribu</label>
+  <input type="text" id="mail">
+                  <label for="date">Nacimiento</label>
+                 <input type="date" id="birthdaytime" name="birthdaytime">
+                   <label for="bando">Bando</label>
+         <select name="bando" id="lang">
                           <option value="buenos">Buenos</option>
                           <option value="malos">Malos</option>
-                        </select></tr>
-                        <tr><td width="40%"><label for="descr">Historia del personaje</label>
-                            <td width="60%">  <textarea id="descr" placeholder="Puntos débiles..."></textarea><tr>
-                                <tr><td width="40%"><label for="file">Imagen</label>
-                                <input type="file" name="Browse" accept=".pdf,.jpg,.png" multiple /><tr>
-                                    <tr><td width="40%"><input type="submit" value="Crear"></tr></table>
+                        </select>
+              <label class="span2" for="descr">Historia del personaje</label>
+                       <textarea id="descr" class="span2" placeholder="Puntos débiles..." cols="30" rows="10"></textarea>
+                    <label for="file">Imagen</label>
+                                <input type="file" name="Browse" accept=".pdf,.jpg,.png" multiple />
+                         <input type="submit" value="Crear">
+                        </div>
+                        </fieldset>
+                    </form>
 
     </div>
 </body>
