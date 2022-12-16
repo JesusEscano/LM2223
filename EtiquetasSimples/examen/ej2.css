@@ -1,11 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Open Sans Condensed:300');
 body {
     background-color: lightgrey;
-    font-family: 'Open Sans Condensed';font-size: 24px;
-    font-style: bold;
-    font-variant: small-caps;
-    padding-left: 10%;
-}
+    margin: 1em 10vw;
+  }
 .formulario {
     border: solid black 1px;
     font-family: 'Open Sans Condensed';font-size: 24px;
