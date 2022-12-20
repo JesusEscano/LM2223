@@ -22,12 +22,14 @@ img {
 .wrapper {
     width: 100%;
     table-layout: fixed;
+    display: flex;
+flex-wrap:wrap;
 }
 
 .main {
-
+flex:400px;
 width: 100%;
-max-width: 600px;
+max-width: 100%;
 background-color: white;
 font-family: sans-serif;
 color: black;
@@ -37,37 +39,49 @@ box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
 .columnas {
     text-align: center;
     justify-content: center;
+
 }
 .columnas .column {
     width: 100%;
-    max-width: 300px;
+    max-width: 50%;
     display: inline-block;
     vertical-align: top;
+    padding: 0 15px 0px 15px;
+
+}
+
+.navidad {
+    background-color: red;
+    animation: Navidad 5s infinite;
 }
 
 a:link {
   text-decoration: none;
-  color: aqua;
 }
-@media screen and (max-width: 600px) {
-    .grid-container {
-       display: grid;
-       grid-template-columns: 1fr;
 
-    }}
+@keyframes Navidad {
+  0% {background-color: red;}
+  25% {background-color: orange; color: black;} 
+  50% {background-color: green; color: white;}
+  75% {background-color: blue; color: white;}
+}
+
+
+
+
+
     </style>
 </head>
 <body>
-    <div class="wrapper">
-        <table class="main columnas">
+    <center class="wrapper">
+        <table class="main columnas column">
         <tr><td><img src="https://i.imgur.com/trWRb8g.png" alt="christmas" class="responsive" width="93%" style="background-color: bisque" ;></td>
-            <td class="responsive"><h3>FELICES FIESTAS</h3>
+            <td class="responsive navidad"><h3>FELICES FIESTAS</h3>
         <p>Que tus fiestas estén llenas de amor y cariño.</p>
-<p>Disfruta de unas maravillosas Navidades,</p> <p>ten un feliz año nuevo</p> <p>y una mágica noche de Reyes.</p>
+<p>Disfruta de unas maravillosas Navidades, ten un feliz año nuevo y una mágica noche de Reyes.</p>
 <p>De parte de <a href="mailto:jesusescano83@iesamachado.org">Jesús Escaño Moreno</a></p></td></tr>
         </table>
-</div>
-
+    </center>
 
 </body>
 </html>
