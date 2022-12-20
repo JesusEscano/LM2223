@@ -22,14 +22,13 @@ img {
 .wrapper {
     width: 100%;
     table-layout: fixed;
-    display: flex;
-flex-wrap:wrap;
 }
 
 .main {
 flex:400px;
+flex-wrap: wrap;
 width: 100%;
-max-width: 100%;
+max-width: 600px;
 background-color: white;
 font-family: sans-serif;
 color: black;
@@ -41,9 +40,8 @@ box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
     justify-content: center;
 
 }
-.columnas .column {
+.column {
     width: 100%;
-    max-width: 50%;
     display: inline-block;
     vertical-align: top;
     padding: 0 15px 0px 15px;
@@ -74,12 +72,17 @@ a:link {
 </head>
 <body>
     <center class="wrapper">
-        <table class="main columnas column">
-        <tr><td><img src="https://i.imgur.com/trWRb8g.png" alt="christmas" class="responsive" width="93%" style="background-color: bisque" ;></td>
-            <td class="responsive navidad"><h3>FELICES FIESTAS</h3>
-        <p>Que tus fiestas estén llenas de amor y cariño.</p>
-<p>Disfruta de unas maravillosas Navidades, ten un feliz año nuevo y una mágica noche de Reyes.</p>
-<p>De parte de <a href="mailto:jesusescano83@iesamachado.org">Jesús Escaño Moreno</a></p></td></tr>
+        <table class="main" width="100%">
+        <tr><td class="columnas">
+            <table class="column"><tr>
+                <td><img src="https://i.imgur.com/trWRb8g.png" alt="christmas" class="responsive" width="93%" style="background-color: bisque" ;></td>
+                <td class="navidad"><h3>FELICES FIESTAS</h3>
+                    <p>Que tus fiestas estén llenas de amor y cariño.</p>
+            <p>Disfruta de unas maravillosas Navidades, ten un feliz año nuevo y una mágica noche de Reyes.</p>
+            <p>De parte de <a href="mailto:jesusescano83@iesamachado.org">Jesús Escaño Moreno</a></p></td>
+            </tr></table>
+        </td>
+        </tr>
         </table>
     </center>
 
