@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circulitos Javascript</title>
+    <style>
+
+.cajas {
+    display: flex;
+            flex-wrap: wrap;
+  align-items: flex-start;
+  background-color: white;
+  flex-direction: row;
+  align-content:space-between;
+}
+
+.rojo {  width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin:5px;
+    background: red; }
+.verde {  width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin:5px;
+    background: green; }
+.azul {  width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin:5px;
+    background: blue; }
+
+.botones {
+    display: flex;
+            flex-wrap: wrap;
+  align-items: flex-start;
+  background-color: white;
+  flex-direction: row;
+  align-content:space-between;
+}
+.b1 {
+    margin-top: 5px;
+    margin-left: 75px;
+}
+.b2 {
+    margin-top: 5px;
+    margin-left:150px;
+}
+.b3 {
+    margin-top: 5px;
+    margin-left:150px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="cajas">
+        <div id="b1" class="rojo"></div>
+        <div id="b2" class="verde"></div>
+        <div id="b3" class="azul"></div>
+    </div>
+    <div class="botones">
+    <div class="b1">
+       <button type="button" onclick='document.getElementById("b1").style.backgroundColor="white"'>Ocultar</button></div>
+       <div class="b2">  <button type="button" onclick='document.getElementById("b2").style.backgroundColor="white"'>Ocultar</button></div>
+        <div class="b3">  <button type="button" onclick='document.getElementById("b3").style.backgroundColor="white"'>Ocultar</button>
+    </div></div>
+</body>
+</html>
