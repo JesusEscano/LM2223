@@ -11,7 +11,6 @@
     display: flex;
             flex-wrap: wrap;
   align-items: flex-start;
-  background-color: white;
   flex-direction: row;
   align-content:space-between;
 }
@@ -36,10 +35,17 @@
     display: flex;
             flex-wrap: wrap;
   align-items: flex-start;
-  background-color: white;
   flex-direction: row;
   align-content:space-between;
 }
+.botonesc {
+    display: flex;
+            flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: row;
+  align-content:space-between;
+}
+
 .b1 {
     margin-top: 5px;
     margin-left: 75px;
@@ -52,7 +58,21 @@
     margin-top: 5px;
     margin-left:150px;
 }
+.b4 {
+    margin-top: 5px;
+    margin-left: 68px;
 
+}
+.b5 {
+    margin-top: 5px;
+    margin-left:135px;
+
+}
+.b6 {
+    margin-top: 5px;
+    margin-left:135px;
+
+}
     </style>
     <script src="circulos.js"></script>
 </head>
@@ -63,9 +83,14 @@
         <div id="b3" class="azul"></div>
     </div>
     <div class="botones">
-    <div class="b1"> <button type="button" onclick="redondo('b1')">Ocultar</button></div>
-       <div class="b2">  <button type="button" onclick="redondo('b2')">Ocultar</button></div>
-        <div class="b3">  <button type="button" onclick="redondo('b3')">Ocultar</button>
-    </div></div>
+    <div class="b1"> <button id="bo1" onclick="redondo('b1')">Apagar</button> </div>
+    <div class="b2"> <button type="bo2" onclick="redondo('b2')">Apagar</button> </div>
+    <div class="b3"> <button type="bo3" onclick="redondo('b3')">Apagar</button> </div>
+    </div>
+    <div class="botonesc">
+        <div class="b4"> <button id="bo4" onclick="recupera('b1')">Encender</button> </div>
+        <div class="b5"> <button id="bo5" onclick="recupera('b2')">Encender</button> </div>
+        <div class="b6"> <button id="bo6" onclick="recupera('b3')">Encender</button> </div>
+    </div>
 </body>
 </html>
