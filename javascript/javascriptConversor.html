@@ -9,13 +9,14 @@
 <body>
     <p><h1>Pase de € a $ y a la inversa</h1>
     <input id="entrada€" type="number">
+ 
     <button onclick="saludo()">De € a $</button>
     <script>
     function saludo() {
-    var a=1;
-    var b=0.94;
-    var c=document.getElementById("entrada€").value;
-    var cálculo;
+    let a=1;
+    let b=0.94;
+    let c=document.getElementById("entrada€").value;
+    let cálculo;
     cálculo = c*a/b;
     alert(cálculo);
     }
@@ -25,10 +26,10 @@
     <button onclick="saludos()">De $ a €</button>
     <script>
         function saludos() {
-        var a=0.94;
-        var b=1;
-        var c=document.getElementById("entrada$").value;
-        var cálculo;
+        let a=0.94;
+        let b=1;
+        let c=document.getElementById("entrada$").value;
+        let cálculo;
         cálculo = c*a/b;
         alert(cálculo);
         }

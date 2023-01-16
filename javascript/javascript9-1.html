@@ -12,13 +12,14 @@
     <h1>Escribe tu contraseña</h1>
     <input id="entradaContra" type="textbox">
     <button onclick="saludo()">Login</button>
+    <p id="salida"></p>
     <script>
     function saludo() {
-    var entradaTexto;
+    let entradaTexto;
     entradaTexto = document.getElementById("entradaTexto").value;
-    var entradaContra;
+    let entradaContra;
     entradaContra = document.getElementById("entradaContra").value;
-    alert('Bienvenido usuario '+entradaTexto+' con contraseña '+ entradaContra);
+    document.getElementById("salida").innerHTML='Bienvenido usuario '+entradaTexto+' con contraseña '+ entradaContra;
     }
     </script>
 </body>

@@ -3,9 +3,15 @@ function redondo(params) {
 
 }
 
+function recupera(id,color) {
+    document.getElementById(id).style.backgroundColor=color;
+}
 
-function recupera(params) {
-    document.getElementById("b1").style.backgroundColor="red";
-    document.getElementById("b2").style.backgroundColor="green";
-    document.getElementById("b3").style.backgroundColor="blue";
+function cambia(id,color) {
+    if (document.getElementById(id).style.backgroundColor=="transparent"){
+        document.getElementById(id).style.backgroundColor=color;
+    }
+    else{
+        document.getElementById(id).style.backgroundColor="transparent";
+    }
 }
