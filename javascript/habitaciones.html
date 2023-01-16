@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotelia</title>
+</head>
+<body>
+    <p>Indique las personas:</p>
+    <label for="Adultos">Número de adultos:</label>
+  <input id="Adultos" type="number" name="Adultos">
+  <label for="Niños">Número de niños</label>
+  <input id="Niños" type="number" name="Niños">
+  <input type="submit" onclick="comprobación();return false">
+  <p id="resultado"></p>
+  <script>
+function comprobación() {
+let Adultos=document.getElementById("Adultos").value;
+let Niños=document.getElementById("Niños").value;
+if (Adultos==2 || Adultos==1 && Niños==0)
+document.getElementById("resultado").innerHTML = "Necesita una habitación doble";
+else if (Adultos==2 && Niños==1)
+document.getElementById("resultado").innerHTML = "Necesita una habitación doble con supletoria";
+else if (Adultos==3)
+document.getElementById("resultado").innerHTML = "Necesita una habitación triple";
+else (Adultos==2 && Niños==2)
+document.getElementById("resultado").innerHTML = "Necesita una habitación familiar";
+}
+
+  </script>
+</body>
+</html>
