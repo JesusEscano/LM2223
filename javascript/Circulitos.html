@@ -78,19 +78,24 @@
 </head>
 <body>
     <div class="cajas">
-        <div id="b1" class="rojo"></div>
-        <div id="b2" class="verde"></div>
-        <div id="b3" class="azul"></div>
+        <div  class="rojo"></div>
+        <div  class="verde"></div>
+        <div  class="azul"></div>
     </div>
     <div class="botones">
-    <div class="b1"> <button id="bo1" onclick="redondo('b1')">Apagar</button> </div>
+    <div class="b1"> <button type="bo1" onclick="redondo('b1')">Apagar</button> </div>
     <div class="b2"> <button type="bo2" onclick="redondo('b2')">Apagar</button> </div>
     <div class="b3"> <button type="bo3" onclick="redondo('b3')">Apagar</button> </div>
     </div>
     <div class="botonesc">
-        <div class="b4"> <button id="bo4" onclick="recupera('b1')">Encender</button> </div>
-        <div class="b5"> <button id="bo5" onclick="recupera('b2')">Encender</button> </div>
-        <div class="b6"> <button id="bo6" onclick="recupera('b3')">Encender</button> </div>
+        <div class="b4"> <button onclick="recupera('rojo','red')">Encender</button> </div>
+        <div class="b5"> <button onclick="recupera('verde','green')">Encender</button> </div>
+        <div class="b6"> <button onclick="recupera('azul','blue')">Encender</button> </div>
+    </div>
+    <div class="botones">
+        <div class="b4"> <button onclick="cambia('rojo','red')">Cambiar</button> </div>
+        <div class="b5"> <button onclick="cambia('verde','green')">Cambiar</button> </div>
+        <div class="b6"> <button onclick="cambia('azul','blue')">Cambiar</button> </div>
     </div>
 </body>
 </html>
