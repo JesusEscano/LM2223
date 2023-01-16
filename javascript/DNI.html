@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNI</title>
+</head>
+<body>
+<form>
+        <label for="DNI">DNI:</label>
+  <input id="DNI" type="mumber" name="DNI" placeholder="000000000">
+  <input type="submit" onclick="comprobación();return false">
+  <p id="resultado"></p>
+</form>
+    <script>
+    function comprobación() {
+let entrada=document.getElementById("DNI").value;
+let numero=8;
+let contador=parseInt(entrada.length);
+let opciones="TRWAGMYFPDXBNJZSQVHLCKET";
+let DNI=entrada%23;
+let DNIL=opciones.substring(DNI,DNI+1);
+if (contador!=numero)
+{
+document.getElementById("resultado").innerHTML = "Se ha equivocado";
+}
+else
+{
+    document.getElementById("resultado").innerHTML = "Su DNI es " + entrada + DNIL;
+}
+
+}
+
+
+    </script>
+</body>
+</html>
