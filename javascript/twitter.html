@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter fake</title>
+    <style>
+        .rectangulo{
+            width: 50%;
+            height: 100px;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<img src="iconopajaro.png" alt="" onclick="alert('Hola')">
+
+    <form>
+  <input id="Twitter" type="frase" name="Twitter" placeholder="Escriba su mensaje">
+  <input type="submit" onclick="twitea()">
+  <p>Pulsa el botón para eliminar el elemento.</p>
+  <button onclick="ordena()">Ordenar</button>
+</form>
+
+
+
+
+    <script>
+        let cadena="Ha seleccionado la papelera"
+        function eliminarmensaje(pos){
+loqueborra
+Twittea();
+        }
+        let Twitter=("Frase 1", "Frase 2", "Frase 3", "Frase 4", "Frase 5", "Frase 6", "Frase 7", "Frase 8", "Frase 9", "Frase 10");
+        twitea();
+        function twitea(){
+        for (var i=Twitter.length-1;i>=0;i=i-1){
+        document.write("<div class'rectangulo'>");
+        document.write("<img widht='30' src='iconopajaro.png'>");
+        document.write(Twitter[i]);
+        document.write("<img widht='30' onclick='eliminarmensaje("+i+")' src='iconobasura.png'>");
+        document.write("</div>");
+    }
+    }
+
+        </script>
+</body>
+</html>
+
