@@ -15,19 +15,38 @@
     </style>
 </head>
 <body>
-<img src="iconopajaro.png" alt="" onclick="alert('Hola')">
+    <input id="twitt" type="text" placeholder="Escribe tu mensaje">
+    <button id="boton" onclick="manda()">Post</button>
+    <p id="mensajes"></p>
+    <p>Pulsa el botón para eliminar el elemento.</p>
+    <button onclick="ordena()">Ordenar</button>
 
-    <form>
-  <input id="Twitter" type="frase" name="Twitter" placeholder="Escriba su mensaje">
-  <input type="submit" onclick="twitea()">
-  <p>Pulsa el botón para eliminar el elemento.</p>
-  <button onclick="ordena()">Ordenar</button>
-</form>
+
 
 
 
 
     <script>
+function manda() {
+let mensaje=document.getElementById("twitt").value;
+        document.write("<div class'rectangulo'>");
+        document.write("<img widht='30' src='iconopajaro.png'>");
+        document.write(mensaje);
+        document.write("<img widht='30' src='iconobasura.png'>");
+        document.write("</div>");}
+
+
+
+
+
+
+
+
+
+
+
+"<div class='rectangulo'><img widht='30' src='iconopajaro.png'>mensaje<img widht='30' onclick='eliminarmensaje("+i+")' src='iconobasura.png'></div>"
+
         let cadena="Ha seleccionado la papelera"
         function eliminarmensaje(pos){
 loqueborra
