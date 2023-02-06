@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mensajes{
+            display: flex;
+            flex-direction: column;
+        }
+        .rectangulo{
+            box-sizing: border-box;
+            width: 50%;
+            height: 50px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+        #caja{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <input id="intro" type="text" placeholder="Escribe post">
+    <button id="insertar" onclick="insert()">Enviar</button>
+    <h3>Pulsa el botón para sustraer el elemento.</h3>
+    <button onclick="orden()">Ordenar</button>
+    <p id="twits"></p>
+    <script>
+    let Twitter = ["Frase 1", "Frase 2", "Frase 3", "Frase 4", "Frase 5", "Frase 6", "Frase 7", "Frase 8", "Frase 9", "Frase 10"];
+imprimePosts();
+function ordenar(){
+    Twitter.sort;
+    imprimePosts();
+}
+        for(var i=0;i<Twitter.length;i++)
+        {
+            //document.write("<div class='rectangulo'>"+"<img src='iconopajaro.png' width='32'>"+Twitter[i]+"<img onclick='borrar()' src='iconobasura.png' width='32'>"+"</div><br>");
+            document.getElementById("twits").innerHTML = ("<div class='rectangulo'>"+"<img src='iconopajaro.png' width='32'>"+Twitter[i]+"<img onclick='borrar()' src='iconobasura.png' width='32'>"+"</div><br>");
+        }
+        function insert(){
+            var mensaje = document.getElementById("intro").value;
+            post.push(mensaje);
+            imprimePosts();
+            //a=document.getElementById('intro').value;
+            //tweet.push(a);
+            //document.write("<div class='rectangulo'>"+"<img src='iconopajaro.png' width='32'>"+Twitter[tweet.length]+"<img src='iconobasura.png' width='32'>"+"</div><br>");
+        }
+        function borrar(elemento){
+            alert('Ha hecho click en borrar');
+            Twitter.pop();
+            document.getElementById("twits").innerHTML = ("<div class='rectangulo'>"+"<img src='iconopajaro.png' width='32'>"+Twitter[i]+"<img onclick='borrar()' src='iconobasura.png' width='32'>"+"</div><br>");
+
+        }
+
+
+function imprimePosts(){
+    let longitud=posts.length;
+    let i=0, codigoHTML="";
+    let icono="<div class='rectangulo'><img src='iconopajaro.png'>";
+    for (i=0;i<longitud;i++){
+        codigoHTML+=icono+posts[i]+"<button class=\"iconobasura.png\" onclick='eliminarposts["+i+"]);''></button><br></div>";
+    }    
+    document.getElementById("twits").innerHTML=codigoHTML;
+}
+
+
+
+    </script>
+</body>
+</html>
