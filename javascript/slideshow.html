@@ -10,7 +10,7 @@
     <table border="0" cellpadding="0">
         <h1>IES Isbilya</h1>
      <tr>
-       <td width="100%"><img src="s1.jpg" id="fotoActual"></td>
+       <td width="100%"><img name="Slide"></td>
      </tr>
      <tr>
        <td width="100%">
@@ -28,6 +28,10 @@
      </tr>
    </table>  
              <script>
+  window.addEventListener('load', function(){
+    console.log('el contenido ha cargado')
+    document.slider.src = 'javascript/img/s0.jpg'
+  })
 let Imagenes=['img src="s0.jpg",img src="s1.jpg",src="s2.jpg",src="s3.jpg",src="s4.jpg",src="s5.jpg"'];
 for (var i=Imagenes.length-1;i>=0;i=i-1)
             
