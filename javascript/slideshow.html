@@ -5,12 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slideshow</title>
+    <style>
+
+    </style>
 </head>
 <body>
     <table border="0" cellpadding="0">
         <h1>IES Isbilya</h1>
      <tr>
-       <td width="100%"><img name="Slide"></td>
+       <td width="100%">
+          <img src="img/s0.jpg" style="width:100%" class="orden">
+        </td>
      </tr>
      <tr>
        <td width="100%">
@@ -18,8 +23,8 @@
          <div align="center">
              
              
-             <input type="button" value="Atrás" onClick="atras()">
-             <input type="button" value="Siguiente" onClick="siguiente()">
+             <input type="button" class="btn" value="Atrás" onClick="atras()">
+             <input type="button" class="btn" value="Siguiente" onClick="siguiente()">
              <br>
          
            </div>
@@ -28,22 +33,23 @@
      </tr>
    </table>  
              <script>
-  window.addEventListener('load', function(){
-    console.log('el contenido ha cargado')
-    document.slider.src = 'javascript/img/s0.jpg'
-  })
-let Imagenes=['img src="s0.jpg",img src="s1.jpg",src="s2.jpg",src="s3.jpg",src="s4.jpg",src="s5.jpg"'];
-for (var i=Imagenes.length-1;i>=0;i=i-1)
-            
-function atras(){
-    for (var i=Imagenes.length-1;i>=0;i=i-1)
-    document.getElementById("fotoActual").innerHTML = src="s[i-1].jpg" ;
+              var imagen = document.querySelector('.orden')
+              var imagenes = ['s0.jpg', 's1.jpg', 's2.jpg', 's3.jpg', 's4.jpg']
+              var i = 0; 
+              function atras(){
+                if (i <=0) i = imagenes.length;
+                i--;
+                return imgf();
+                
+              }
+              function siguiente(){
+                if (i >= imagenes.length-1) i=-1;
+                i++;
+                return imgf();
+              }
+              function imgf(){
+                return imagen.setAttribute('src', 'img/' + imagenes[i]);
 }
-function siguiente(){
-    for (var i=Imagenes.length-1;i>=0;i=i-1)
-    document.getElementById("fotoActual").innerHTML = src="s[i+1].jpg" ;
-}
-
    </script>
 </body>
 </html>
