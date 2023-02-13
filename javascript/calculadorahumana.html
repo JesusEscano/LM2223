@@ -11,18 +11,93 @@
             border:#000 1px solid;
             padding:10px 40px 40px 40px;
         }
+        p { margin-top: -10px; }
         </style>
         <script>
-        var pos 0, test, examen, pregunta, option, opciones, chA, chB
-        var preguntas = (
-            ["¿Cuánto es 10+4"]
-        )
-        window.addEventListener("Load")
+var preguntas = ['¿Cuánto es 10 + 4?', '¿Cuánto es 20 - 9?', '¿Cuánto es 7 x 3?', '¿Cuánto es 8 / 2?'];
+var i = 0; 
+var puntos = 0;
+function escribepre() {
+    document.getElementById("pregunta").innerHTML = preguntas[i];
+}
+var respuestas1 = ['12', '7', '21', '10']
+function escriberes1() {
+    document.getElementById("res1").innerHTML = ("<input type='radio' name='eli1'>"+respuestas1[i]);
+}
+var respuestas2 = ['14', '13', '24', '2']
+function escriberes2() {
+    document.getElementById("res2").innerHTML = ("<input type='radio' name='eli2'>"+respuestas2[i]);
+}
+var respuestas3 = ['16', '11', '25', '4']
+function escriberes3() {
+    document.getElementById("res3").innerHTML = ("<input type='radio' name='eli3'>"+respuestas3[i]);
+}
+function Responder() {
+    if (i >= preguntas.length-1) i=-1;
+                i++;
+                return escribepre(), escriberes1(),escriberes2(),escriberes3(),resultado() ;
+}
+function puntos(){
+    if (document.getElementsByName("eli1").checked && document.getElementById("pregunta").innerHTML == preguntas[0])  {
+    puntos++;}
+   else if (document.getElementsByName("eli2").checked || document.getElementsByName("eli3").checked &&  document.getElementById("pregunta").innerHTML == preguntas[0]){
+    puntos;}
+   else if (document.getElementsByName("eli3").checked && document.getElementById("pregunta").innerHTML == preguntas[1]) {
+    puntos++;}
+   else if (document.getElementsByName("eli1").checked || document.getElementsByName("eli2").checked &&  document.getElementById("pregunta").innerHTML == preguntas[1]){
+    puntos;}
+    else if (document.getElementsByName("eli1").checked && document.getElementById("pregunta").innerHTML == preguntas[2]) {
+    puntos++;}
+   else if (document.getElementsByName("eli2").checked || document.getElementsByName("eli3").checked &&  document.getElementById("pregunta").innerHTML == preguntas[2]){
+    puntos;}
+    else if (document.getElementsByName("eli3").checked && document.getElementById("pregunta").innerHTML == preguntas[3]) {
+    puntos++;}
+   else if (document.getElementsByName("eli1").checked || document.getElementsByName("eli2").checked &&  document.getElementById("pregunta").innerHTML == preguntas[3]){
+    puntos;}
+    else {
+    document.getElementById("pregunta").innerHTML = preguntas[i];
+    document.getElementById("res1").innerHTML = ("<input type='radio' name='eli1'>"+respuestas1[i]);
+    document.getElementById("res2").innerHTML = ("<input type='radio' name='eli2'>"+respuestas2[i]);
+    document.getElementById("res3").innerHTML = ("<input type='radio' name='eli3'>"+respuestas3[i]);
+    }}
+    function resultado() {
+    document.getElementById("resultado").innerHTML = puntos;
+}
+
+
+
+
+              //var preguntas = ['¿Cuánto es 10 + 4?', '¿Cuánto es 20 - 9?', '¿Cuánto es 7 x 3?', '¿Cuánto es 8 / 2?'];
+              //var i = 0; 
+             // function Responder(){
+              //  if (i >= preguntas.length-1) i=-1;
+              //  i++;
+              //  return pregunta();
+//}
+//function pregunta(){
+//    document.getElementById("pregunta").innerHTML = preguntas;
+//}
+
+
+
+        // var pos0, test, examen, pregunta, option, opciones, chA, chB
+        // var preguntas = (
+        //    ["¿Cuánto es 10+4"]
+        // )
+        // window.addEventListener("Load")
         </script>
         </head>
-        <body>
+        <body onload="escribepre(), escriberes1(), escriberes2(), escriberes3(),resultado() ">
         <h1>Calculadora humana</h1>
         <h2 id="estado"></h2>
-        <div id="examen"></div>
+        <div id="examen">
+            <h2><p id="pregunta"></p></h2>
+           <p id="res1"></p>
+           <p id="res2"></p>
+           <p id="res3"></p>
+           <p><input type="button" class="btn" value="Enviar Respuesta" onClick="Responder()"></p>
+           <p id="resultado"></p>
+        </div>
         </body>
         </html>
+    
