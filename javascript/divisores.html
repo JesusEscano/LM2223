@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primos</title>
+</head>
+<body>
+    <h2>¿Es primo?</h2>
+    <form>
+        <label for="Num">Número:</label>
+  <input id="Num" type="number" name="Num">
+  <input type="Submit" onclick="comprobación();return false">
+  <p id="resultado"></p>
+</form>
+    <script>
+        function comprobación(){
+let entrada=parseInt(document.getElementById("Num").value);
+let i=2; 
+let esPrimo=true;
+while (i<entrada && esPrimo){
+if (entrada%i == 0)
+{
+document.getElementById("resultado").innerHTML = "El número no es primo";
+esPrimo=false;
+}
+i++;
+if (esPrimo)
+{
+    document.getElementById("resultado").innerHTML = "El número es primo";
+}
+}}
+
+
+    </script>
+</body>
+</html>
