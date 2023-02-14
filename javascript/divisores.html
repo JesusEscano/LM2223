@@ -15,9 +15,10 @@
         function comprobación(){
 var entrada=parseInt(document.getElementById("numero").value);
     for (var i=1;i<=entrada;i++) {
+        if(entrada % i == 0){
     document.getElementById("resultado").innerHTML = document.getElementById("resultado").innerHTML + entrada/i +"<br>";
   }
-
+    }
 }
 
 
