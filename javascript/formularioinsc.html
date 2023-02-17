@@ -7,45 +7,42 @@
     <title>Formulario de alta</title>
 </head>
 <body>
-    <h4>NOMBRE: <input type="text" name="" id="nombre"></h4><p id="fnombre"></p>
-    <p><h4>APELLIDO: <input type="text" name="" id="apellido"></h4></p>
-    <p><h4>E-MAIL: <input type="text" name="" id="correo"></h4></p>
+    <p><h4>NOMBRE: <input type="text" name="" id="nombre"></h4><div id=fnombre></div></p>
+    <p><h4>APELLIDO: <input type="text" name="" id="apellido"></h4><div id=fape></div></p>
+    <p><h4>E-MAIL: <input type="text" name="" id="correo"></h4><div id=fmail></div></p>
     <p><h4>DIRECCIÓN: <input type="text" name="" id="dire"></h4></p>
     <p><h4>CIUDAD: <input type="text" name="" id="ciudad"></h4></p>
     <p><h4>TELÉFONO: <input type="text" name="" id="tlf"></h4></p>
-    <p><h4>DNI: <input type="text" name="" id="dni"></h4></p>
-    <p><h4>PIN: <input type="text" name="" id="pin"></h4></p>
-    <p><h4>PIN (Confirme): <input type="text" name="" id="pin2"></h4></p>
+    <p><h4>DNI (sin letra): <input type="text" name="" id="dni"></h4><div id=fdni></div></p>
+    <p><h4>PIN (8 dígitos): <input type="text" name="" id="pin" placeholder="00000000"></h4><div id=fpin></div></p>
+    <p><h4>PIN (Confirme): <input type="text" name="" id="pin2" placeholder="00000000"></h4><div id=fpin2></div></p>
     <p><button onclick="comprobacion()">Enviar</button></p>
+    <h4><p id="ole"></p></h4>
 <script>
-var nombre = document.getElementById("nombre").value
-var apellido = document.getElementById("apellido").value
-var correo = document.getElementById("correo").value
-var DNI = document.getElementById("dni").value
-var pin = document.getElementById("pin").value
-var pin2 = document.getElementById("pin2").value
 function comprobacion(){
-    
+var nombre = document.getElementById("nombre").value;
+var apellido = document.getElementById("apellido").value;
+var correo = document.getElementById("correo").value;
+var telefon = document.getElementById("tlf").value;
+var DNI = document.getElementById("dni").value;
+var numero=8;
+var contador=parseInt(DNI.length);
+var DNIc=DNI%23;
+var opciones="TRWAGMYFPDXBNJZSQVHLCKET";
+var DNIL=opciones.substring(DNIc,DNIc+1);
+var pin = document.getElementById("pin").value;
+var pin2 = document.getElementById("pin2").value;
+if(nombre==""){ document.getElementById("fnombre").innerHTML = "Por favor, introduzca su nombre"}else{document.getElementById("fnombre").innerHTML=""}
+if(apellido==""){ document.getElementById("fape").innerHTML = "Por favor, introduzca su apellido"}else{document.getElementById("fape").innerHTML=""}
+if(correo==""){document.getElementById("fmail").innerHTML = "Por favor, introduzca una dirección de correo"}else{document.getElementById("fmail").innerHTML=""}
+if(contador!=numero){document.getElementById("fdni").innerHTML = "Por favor, introduzca un DNI correcto"}else{document.getElementById("fdni").innerHTML=""}
+if(pin.length!=8){document.getElementById("fpin").innerHTML = "Por favor, introduzca un Pin de 8 dígitos"}else{document.getElementById("fpin").innerHTML=""}
+if(pin!=pin2){document.getElementById("fpin2").innerHTML = "Vuelva a comprobar que ambos Pins coinciden"}else{document.getElementById("fpin2").innerHTML=""}
+if(nombre=="" || apellido=="" || correo=="" || contador!=numero || pin.length!=8 || pin!=pin2)
+{document.getElementById("ole").innerHTML = document.getElementById("ole").innerHTML="Sus datos tienen algún error, por favor, compruébelos de nuevo"}
+else
+{document.getElementById("ole").innerHTML="Muchas gracias por registrarse, su usuario es "+nombre.substr(0,2)+apellido.substr(0,2)+telefon.slice(-3)}
 }
 </script>
 </body>
 </html>
-
-
-Realiza un formulario que permita dar de alta un usuario en un sitio web. El
-formulario solicitará los siguientes datos:
-○ Nombre(requerido)
-○ Apellido(requerido)
-○ Correo electrónico (requerido)
-○ Dirección
-○ Ciudad
-○ Teléfono
-○ DNI (requerido y validado por Javascript)
-○ PIN (requerido 8 dígitos)
-○ PIN repetido (requerido 8 dígitos)
-Antes de enviar los datos el formulario validará que los campos requeridos se
-rellenan y en caso de no hacerlo mostrará un mensaje de error indicando que
-campo o campos son erróneos o no son acorde a lo solicitado.
-Si los datos suministrados son correctos presentará un mensaje en pantalla
-indicando el nombre de usuario creado que consistirá en las dos primeras letras
-del nombre, dos primeras letras del apellido y tres últimos dígitos del teléfono.
