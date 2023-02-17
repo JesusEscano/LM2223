@@ -9,20 +9,18 @@
 <body>
     <h2>Obtén los divisores del número elegido</h2>
     <input type="text" name="" id="numero">
-<button onclick="comprobación()">Escribe</button>
+<button onclick="comprobacion()">Escribe</button>
 <p id="resultado"></p>
     <script>
-        function comprobación(){
+        function comprobacion(){
+            document.getElementById("resultado").innerHTML="";
 var entrada=parseInt(document.getElementById("numero").value);
-    for (var i=1;i<=entrada;i++) {
+    for (var i=1;entrada>=i;i++) {
         if(entrada % i == 0){
     document.getElementById("resultado").innerHTML = document.getElementById("resultado").innerHTML + entrada/i +"<br>";
-  }
     }
+  }
 }
-
-
-        
     </script>
 </body>
 </html>
