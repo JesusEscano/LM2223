@@ -8,30 +8,29 @@
 </head>
 <body>
     <p>Indique las personas:</p>
- <!-- <form>  
-  <label for="Adultos">Número de adultos:</label>
-  <input id="Adultos" type="number" name="Adultos">
-  <label for="Niños">Número de niños</label>
-  <input id="Niños" type="number" name="Niños">
-  <input type="submit" onclick="comprobación();return false"></form> -->
   <input id="Adultos" type="number" placeholder="Indique cuántos adultos:">
   <input id="Niños" type="number" placeholder="Indique cuántos niños:">
   <button id="boton" onclick="comprobación()">Recomendación</button>
   <p id="resultado"></p>
   <script>
 function comprobación() {
-let Adultos=document.getElementById("Adultos").value;
-let Niños=document.getElementById("Niños").value;
-if (Adultos <= 2 && Niños == 0) 
-document.getElementById("resultado").innerHTML = "Necesita una habitación doble";
-else if (Adultos == 2 && Niños == 1)
-document.getElementById("resultado").innerHTML = "Necesita una habitación doble con supletoria";
-else if (Adultos == 3)
-document.getElementById("resultado").innerHTML = "Necesita una habitación triple"; 
-else if (Adultos == 2 && Niños == 2)
-document.getElementById("resultado").innerHTML = "Necesita una habitación familiar";
+var Adultos=parseInt(document.getElementById("Adultos").value);
+var Niños=parseInt(document.getElementById("Niños").value);
+var Personas=Adultos+Niños
+var doble=parseInt(1)
+var triple=parseInt(1)
+var suple=parseInt(1)
+var fami=parseInt(1)
+if (Adultos%3==0)
+{(Adultos/3)*triple}
+else if (Adultos%Niños==1 && Adultos!=1 && Adultos!=0)
+{(Niños/2)*fami}
+else if (Adultos == 2*Niños)
+{Niños*suple}
+else if (Adultos == 0 || Niños>Adultos || Adultos==1 && Niños==1)
+{document.getElementById("resultado").innerHTML = "Lo sentimos, no disponemos de habitaciones para esa combinación"}
 else 
-document.getElementById("resultado").innerHTML = "No hay habitaciones para esa selección";
+{}
 }
   </script>
 </body>
