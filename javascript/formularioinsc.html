@@ -32,13 +32,13 @@ var opciones="TRWAGMYFPDXBNJZSQVHLCKET";
 var DNIL=opciones.substring(DNIc,DNIc+1);
 var pin = document.getElementById("pin").value;
 var pin2 = document.getElementById("pin2").value;
-if(nombre==""){ document.getElementById("fnombre").innerHTML = "Por favor, introduzca su nombre"}else{document.getElementById("fnombre").innerHTML=""}
-if(apellido==""){ document.getElementById("fape").innerHTML = "Por favor, introduzca su apellido"}else{document.getElementById("fape").innerHTML=""}
+if(nombre=="" || nombre.length<=2){ document.getElementById("fnombre").innerHTML = "Por favor, introduzca su nombre"}else{document.getElementById("fnombre").innerHTML=""}
+if(apellido=="" || apellido.length<=2){ document.getElementById("fape").innerHTML = "Por favor, introduzca su apellido"}else{document.getElementById("fape").innerHTML=""}
 if(correo==""){document.getElementById("fmail").innerHTML = "Por favor, introduzca una dirección de correo"}else{document.getElementById("fmail").innerHTML=""}
 if(contador!=numero){document.getElementById("fdni").innerHTML = "Por favor, introduzca un DNI correcto"}else{document.getElementById("fdni").innerHTML=""}
 if(pin.length!=8){document.getElementById("fpin").innerHTML = "Por favor, introduzca un Pin de 8 dígitos"}else{document.getElementById("fpin").innerHTML=""}
 if(pin!=pin2){document.getElementById("fpin2").innerHTML = "Vuelva a comprobar que ambos Pins coinciden"}else{document.getElementById("fpin2").innerHTML=""}
-if(nombre=="" || apellido=="" || correo=="" || contador!=numero || pin.length!=8 || pin!=pin2)
+if(nombre=="" || nombre.length<=2 || apellido=="" || apellido.length<=2 || correo=="" || contador!=numero || pin.length!=8 || pin!=pin2)
 {document.getElementById("ole").innerHTML = document.getElementById("ole").innerHTML="Sus datos tienen algún error, por favor, compruébelos de nuevo"}
 else
 {document.getElementById("ole").innerHTML="Muchas gracias por registrarse, su usuario es "+nombre.substr(0,2)+apellido.substr(0,2)+telefon.slice(-3)}
