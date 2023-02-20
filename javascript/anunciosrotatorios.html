@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam</title>
+</head>
+<body onload="cambiar(), imgf()">
+    <h2>Anuncios rotatorios</h2>
+    <a href="https://store.dsautomobiles.es/configurable" class="enlace" target="_blank"><img src="img/banner0.png"  class="orden" onclick="siguiente()"></a>
+    <script>
+           var imagen = document.querySelector('.orden')
+           var link = document.querySelector('.enlace')
+              var imagenes = ['banner0.png', 'banner1.png', 'banner2.png', 'banner3.png', 'banner4.png', 'banner5.png']
+              var enlaces = ['https://store.dsautomobiles.es/configurable', 'https://www.elcorteingles.es/supermercado/', 'https://www.elcorteingles.es/daitsu/electrodomesticos/aire-acondicionado/', 'https://www.madridhifi.com', 'https://launidad.movistarplus.es/?dis_c=331187589&dclid=CL-Lt9zx4_YCFdZEHQkdLpkExQ', 'https://www.tikamoon.es']
+              var i = 0; 
+function cambiar(){
+     document.getElementById("enlace").src = imagenes,enlaces[rand(5)-1];
+}
+function siguiente(){
+                if (i >= imagenes.length-1) i=-1;
+                if (i>= enlaces.length-1) i=-1;
+                i++;
+                return imgf();
+            }
+function imgf(){
+    return imagen.setAttribute('src', 'img/' + imagenes[i]);           
+    return link.setAttribute('href', enlaces[i]);}  
+    </script>
+</body>
+</html>
