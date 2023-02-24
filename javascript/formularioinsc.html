@@ -40,9 +40,9 @@ if(apellido=="" || apellido.length<=2){ document.getElementById("fape").innerHTM
 if(correo==""){document.getElementById("fmail").innerHTML = "Por favor, introduzca una dirección de correo"} else if(!mailcom.exec(correo)){document.getElementById("fmail").innerHTML = "Por favor, introduzca una dirección de correo correcta"} else{document.getElementById("fmail").innerHTML=""}
 if(contador!=numero){document.getElementById("fdni").innerHTML = "Por favor, introduzca un DNI correcto"}else{document.getElementById("fdni").innerHTML=""}
 if(telefon==""){document.getElementById("telcom").innerHTML = "Por favor, introduzca un número de teléfono"} else if(telefon.length!=9){document.getElementById("telcom").innerHTML = "Por favor, introduzca un número de teléfono correcto"} else if(isNaN(telefon)){document.getElementById("telcom").innerHTML = "Muy listo. No, no vale poner letras"} else{document.getElementById("telcom").innerHTML=""}
-if(pin.length!=8){document.getElementById("fpin").innerHTML = "Por favor, introduzca un Pin de 8 dígitos"}else{document.getElementById("fpin").innerHTML=""}
+if(pin.length!=8){document.getElementById("fpin").innerHTML = "Por favor, introduzca un Pin de 8 dígitos"} else if(isNaN(pin)){document.getElementById("fpin").innerHTML = "Muy listo. No, no vale poner letras"} else{document.getElementById("fpin").innerHTML=""}
 if(pin!=pin2){document.getElementById("fpin2").innerHTML = "Vuelva a comprobar que ambos Pins coinciden"}else{document.getElementById("fpin2").innerHTML=""}
-if(nombre=="" || nombre.length<=2 || apellido=="" || apellido.length<=2 || correo=="" || contador!=numero || pin.length!=8 || pin!=pin2 || !mailcom.exec(correo) || telefon=="" || telefon.length!=9 || isNaN(telefon))
+if(nombre=="" || nombre.length<=2 || apellido=="" || apellido.length<=2 || correo=="" || contador!=numero || pin.length!=8 || pin!=pin2 || !mailcom.exec(correo) || telefon=="" || telefon.length!=9 || isNaN(telefon) || isNaN(fpin))
 {document.getElementById("ole").innerHTML = document.getElementById("ole").innerHTML="Sus datos tienen algún error, por favor, compruébelos de nuevo"}
 else
 {document.getElementById("ole").innerHTML="Muchas gracias por registrarse, su usuario es "+nombre.substr(0,2)+apellido.substr(0,2)+telefon.slice(-3)}
