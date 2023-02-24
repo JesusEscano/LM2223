@@ -17,9 +17,10 @@ function guardar(){
     let valor=document.getElementById("valor").value;
     localStorage.setItem("clave", clave);
     localStorage.setItem("valor", valor);
-document.getElementById("resultado").innerHTML = 'Su clave es '+localStorage.getItem("clave")+' su valor es '+localStorage.getItem("valor");
+
 }
 
+document.getElementById("resultado").innerHTML = 'Su clave es '+localStorage.getItem("clave")+' su valor es '+localStorage.getItem("valor");
     </script>
 </body>
 </html>

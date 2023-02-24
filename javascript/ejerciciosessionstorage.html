@@ -19,15 +19,22 @@ function guardar(){
     let valor=document.getElementById("valor").value;
     sessionStorage.setItem("clave", clave);
     sessionStorage.setItem("valor", valor);
-document.getElementById("resultado").innerHTML = 'Su clave es '+sessionStorage.getItem("clave")+' su valor es '+sessionStorage.getItem("valor");
 }
 function guardarperma(){
     let clave=document.getElementById("clave").value;
     let valor=document.getElementById("valor").value;
     localStorage.setItem("clave", clave);
     localStorage.setItem("valor", valor);
-document.getElementById("resultado2").innerHTML = 'Su clave es '+localStorage.getItem("clave")+' su valor es '+localStorage.getItem("valor");
 }
+if (sessionStorage.getItem("clave")==null || sessionStorage.getItem("clave")==""){
+document.getElementById("resultado").innerHTML = ""}
+else{
+document.getElementById("resultado").innerHTML = 'Su clave es '+sessionStorage.getItem("clave")+' su valor es '+sessionStorage.getItem("valor")
+}
+if (localStorage.getItem("clave")==null || localStorage.getItem("clave")==""){
+document.getElementById("resultado2").innerHTML = ""}
+else{
+document.getElementById("resultado2").innerHTML = 'Su clave es '+localStorage.getItem("clave")+' su valor es '+localStorage.getItem("valor")};
     </script>
 </body>
 </html>
