@@ -8,54 +8,65 @@
 </head>
 <body>
     <p>Indique las personas:</p>
-  <p><input id="Adultos" type="number" placeholder="Adultos:"></p>
-  <p><input id="Niños" type="number" placeholder="Niños:"></p>
+  <p><h3>Adultos:<input id="Adultos" type="number" placeholder=""></h3></p>
+  <p><h3>Niños:<input id="Niños" type="number" placeholder="Dejar en blanco si es 0"></h3></p>
   <button id="boton" onclick="comprobación()">Comprobar</button>
   <p id="resultado"></p>
   <p id="familiares"></p>
   <p id="supletoria"></p>
+  <p id="triple"></p>
+  <p id="dobles"></p>
   <script>
 function comprobación() {
 document.getElementById("resultado").innerHTML="";
-var Adultos=parseInt(document.getElementById("Adultos").value);
-var Niños=parseInt(document.getElementById("Niños").value);
-var Personas=Adultos+Niños;
-var fami=0
-var suple=0
-for (var i=0;Niños>i;i++) {
-if (Niños>1 && Adultos!=1 && Adultos!="" && i%2==0 && Adultos>=Niños)
-{fami=Math.trunc(Niños/2);
-Niños=Niños-(fami*2);
-Adultos=Adultos-(fami*2)}
-if (Niños>1 && Adultos!=1 && Adultos!="" && i%2!=0 && Adultos>=Niños)
-{fami=Math.trunc((i/2));
-Niños-(fami*2);
-Adultos-(fami*2)}}
-if (fami=0){habit= "habitaciones familiares."} else if
-(fami=1){habit= "habitación familiar."} else
-if (fami>1){habit= "habitaciones familiares."}
-if (Niños=1 && Adultos!=1 && Adultos!="")
-{suple=1;
-Niños-1;
-Adultos-(suple*2)}
-//if (Niños>=1 && Adultos!=1)
-//if (Adultos%3==0)
-//{(Adultos/3)}
-//if (Adultos%Niños==1 && Adultos!=1 && Adultos!=0)
-//{(Niños/2)}
-//if (Adultos == 2*Niños)
-//{Niños}
-if (Adultos == "" || Niños>Adultos || Adultos==1 && Niños==1)
-{document.getElementById("resultado").innerHTML = "Lo sentimos, no disponemos de habitaciones para esa combinación"}
-if (Adultos=="" && Niños=="")
+var adultos=parseInt(document.getElementById("Adultos").value);
+var niños=parseInt(document.getElementById("Niños").value);
+var fami=0;
+var suple=0;
+var triple=0;
+var doble=0;
+for (var i=0;adultos>i;i++) {
+if (adultos!=1 && adultos!="" && Math.floor(niños%2!=0) && adultos>niños)
+{suple++;
+niños=niños-1;
+adultos=adultos-2}
+if (adultos!=1 && adultos!="" && Math.floor(niños%2==0) && adultos>=niños)
+{fami=niños/2;
+niños=niños-(fami*2);
+adultos=adultos-(fami*2)}
+if ((adultos%3)>=0 && adultos!="")
+{triple=Math.trunc(adultos/3);
+adultos=adultos-(triple*3)}
+if (adultos>0 && adultos!="")
+{doble=Math.round(adultos/2);
+adultos=adultos-(doble*2)}
+if (adultos=="" && niños=="")
 {document.getElementById("resultado").innerHTML = ""
 document.getElementById("familiares").innerHTML = ""
 document.getElementById("supletoria").innerHTML = ""
+document.getElementById("triple").innerHTML = ""
+document.getElementById("dobles").innerHTML = ""}
+else if (adultos>niños)
+{document.getElementById("resultado").innerHTML = "Lo sentimos, no disponemos de habitaciones para esa combinación x may"
+document.getElementById("familiares").innerHTML = ""
+document.getElementById("supletoria").innerHTML = ""
+document.getElementById("triple").innerHTML = ""
+document.getElementById("dobles").innerHTML = ""}
+else if (adultos==1 && niños>=0){
+document.getElementById("resultado").innerHTML = "Lo sentimos, no disponemos de habitaciones para esa combinación x el igual"
+document.getElementById("familiares").innerHTML = ""
+document.getElementById("supletoria").innerHTML = ""
+document.getElementById("triple").innerHTML = ""
+document.getElementById("dobles").innerHTML = ""
 }
-
-{document.getElementById("resultado").innerHTML = "Necesita:"}
-{document.getElementById("familiares").innerHTML = fami+" "+habit}
-{document.getElementById("supletoria").innerHTML = suple+" habitación supletoria."}
+else{
+document.getElementById("resultado").innerHTML = "Necesita:"
+document.getElementById("familiares").innerHTML = fami+" habitaciones familiares"
+document.getElementById("supletoria").innerHTML = suple+" habitación supletoria."
+document.getElementById("triple").innerHTML = triple+" habitaciones triples."
+document.getElementById("dobles").innerHTML = doble+" habitaciones dobles."
+}
+}
 }
   </script>
 </body>
