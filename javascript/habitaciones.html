@@ -26,7 +26,7 @@ var suple=0;
 var triple=0;
 var doble=0;
 for (var i=0;adultos>i;i++) {
-if (adultos!=1 && adultos!="" && Math.floor(niños%2!=0) && adultos>niños)
+if (adultos!=1 && adultos!="" && Math.floor(niños%2!=0) && adultos>=niños)
 {suple++;
 niños=niños-1;
 adultos=adultos-2}
@@ -46,7 +46,7 @@ document.getElementById("familiares").innerHTML = ""
 document.getElementById("supletoria").innerHTML = ""
 document.getElementById("triple").innerHTML = ""
 document.getElementById("dobles").innerHTML = ""}
-else if (adultos>niños)
+else if (adultos<niños)
 {document.getElementById("resultado").innerHTML = "Lo sentimos, no disponemos de habitaciones para esa combinación x may"
 document.getElementById("familiares").innerHTML = ""
 document.getElementById("supletoria").innerHTML = ""
