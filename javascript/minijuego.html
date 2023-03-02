@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minijuego</title>
+    <style>
+ .cuadrado1 {
+  width: 200px;
+  height: 200px;
+  border: 3px solid #555; 
+  background-color: #f55353;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.cuadrado2 {
+  width: 100px;
+  height: 100px;
+  border: 3px solid #555; 
+  background-color: #332c9e;
+  position: absolute;
+  top: 75%;
+  left: 70%;
+}
+.rombo {
+     width: 150px; 
+     height: 150px; 
+     border: 3px solid #555; 
+     background-color: #428bca;
+     -webkit-transform: rotate(45deg);
+     -moz-transform: rotate(45deg);
+     -ms-transform: rotate(45deg);
+     -o-transform: rotate(45deg);
+     transform: rotate(45deg);
+     position: absolute;
+  top: 15%;
+  left: 20%;
+}
+.circulo {
+     width: 100px;
+     height: 100px;
+     border: 3px solid #555; 
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background-color: #5cb85c;
+     position: absolute;
+  top: 25%;
+  left: 80%;
+}
+    </style>
+</head>
+<body>
+    <h1>Pincha en el cuadrado:</h1>
+
+    <div class="cuadrado1" id="cuadro" onclick="cambia()"></div>
+    <div class="cuadrado2" id="cuadro2" onclick="cambia2()"></div>
+    <div class="rombo" id="rombo" onclick="cambia3()"></div>
+    <div class="circulo" id="circulo" onclick="cambia4()"></div>
+    <script>
+let cuadro= Math.floor(Math.random()*10) + 1;
+
+function cambia() {
+var cuadrado=document.getElementById("entrada").value;
+}
+//estamos trabajando en ello
+    </script>
+</body>
+</html>
