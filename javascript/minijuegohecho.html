@@ -72,7 +72,12 @@
                 document.getElementById("forma").style.display = "none";
                 fin = new Date().getTime();
                 diferencia = (fin-inicio)/1000;
+                difmin= 99;
+                if (difmin<diferencia){difmin}
+                else if (difmin>diferencia){difmin=diferencia}
+                else {difmin=99}
                 document.getElementById("tiempoReaccion").innerHTML = diferencia + "s";
+                document.getElementById("tiemporecord").innerHTML = difmin + "s";
                 aparecerFormaDespuesRetraso();
             }
         </script>
