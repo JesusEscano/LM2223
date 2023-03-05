@@ -26,6 +26,7 @@
         <div id="forma"></div>
         <script type="text/javascript">
             var inicio = new Date().getTime(); // Alcance global
+            var min = Infinity;
             
             function obtenerColorAleatorio() {
                 let letters = '0123456789ABCDEF'.split('');
@@ -72,12 +73,11 @@
                 document.getElementById("forma").style.display = "none";
                 fin = new Date().getTime();
                 diferencia = (fin-inicio)/1000;
-                difmin= 99;
-                if (difmin<diferencia){difmin}
-                else if (difmin>diferencia){difmin=diferencia}
-                else {difmin=99}
+                if (diferencia < min){
+                    min=diferencia;
+                }
                 document.getElementById("tiempoReaccion").innerHTML = diferencia + "s";
-                document.getElementById("tiemporecord").innerHTML = difmin + "s";
+                document.getElementById("tiemporecord").innerHTML = min + "s";
                 aparecerFormaDespuesRetraso();
             }
         </script>
