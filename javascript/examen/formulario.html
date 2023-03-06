@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+                span {
+            display: table-cell;
+            padding: 0 4px 0 6px;
+        }
+    </style>
+</head>
+<body>
+    <p>Nombre: <input type="text" name="" id="nombre"><label for="" id=fnombre></label></p>
+    <p>Apellidos: <input type="text" name="" id="apellido"><label for=""id=fape></label></p>
+    <p>Correo electrónico: <input type="text" name="" id="correo"><label for="" id=fmail></label></p>
+    <p>PIN: <input type="text" name="" id="pin" placeholder="PIN"><label for="" id=fpin></label></p>
+    <p>Repetir PIN: <input type="text" name="" id="pin2" placeholder="PIN"><label for="" id=fpin2></label></p>
+    <p><input type="checkbox" id="box">Acepto condiciones de uso <label for="" id=fcheck></label></p>
+    <p><button onclick="comprobacion()">Validar</button></p>
+    <h4><p id="ole"></p></h4>
+<script>
+function comprobacion(){
+var nombre = document.getElementById("nombre").value;
+var apellido = document.getElementById("apellido").value;
+var correo = document.getElementById("correo").value;
+var mail = document.getElementById("fmail").value;
+var mailcom = /^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+var pin = document.getElementById("pin").value;
+var pin2 = document.getElementById("pin2").value;
+if(nombre==""){document.getElementById("fnombre").style.color = "red"; document.getElementById("fnombre").innerHTML = " Por favor, introduzca su nombre"}else{document.getElementById("fnombre").innerHTML=""}
+if(apellido==""){document.getElementById("fape").style.color = "red"; document.getElementById("fape").innerHTML = " Este campo es obligatorio"}else{document.getElementById("fape").innerHTML=""}
+if(correo==""){document.getElementById("fmail").style.color = "red"; document.getElementById("fmail").innerHTML = " Por favor, introduzca una dirección de correo"} else if(!mailcom.exec(correo)){document.getElementById("fmail").style.color = "red"; document.getElementById("fmail").innerHTML = "Por favor, introduzca una dirección de correo correcta"} else{document.getElementById("fmail").innerHTML=""}
+if(pin.length<=7){document.getElementById("fpin").style.color = "red"; document.getElementById("fpin").innerHTML = " Las contraseñas deben tener mínimo 8 dígitos"} else if(isNaN(pin)){document.getElementById("fpin").style.color = "red"; document.getElementById("fpin").innerHTML = "las contraseñas deben tener mínimo 8 NÚMEROS."} else{document.getElementById("fpin").innerHTML=""}
+if(pin2.length<=7){document.getElementById("fpin2").style.color = "red"; document.getElementById("fpin2").innerHTML = " Las contraseñas deben tener mínimo 8 dígitos"} else if(pin!=pin2){document.getElementById("fpin2").style.color = "red"; document.getElementById("fpin2").innerHTML = " Vuelva a comprobar que ambos Pins coinciden"}else{document.getElementById("fpin2").innerHTML=""}
+if(document.getElementById("box").checked){document.getElementById("fcheck").innerHTML=""}else{ document.getElementById("fcheck").style.color = "red"; document.getElementById("fcheck").innerHTML = " Debe aceptar las condiciones del formulario"}
+}
+</script>
+</body>
+</html>
+    
+</body>
+</html>
