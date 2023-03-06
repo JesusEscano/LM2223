@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifras</title>
+</head>
+<body>
+    <p><h1>¡Adivina el número en tiempo récord!</h1></p>
+    <p>He pensado un número de 3 cifras...</p>
+    <p id="secret"></p>
+    <p id="imput"></p>
+    <p><button id="boton" onclick="comprobacion()">Comenzar</button></p>
+    <p id="resultado"></p>
+    <p id="tiemposoluc"></p>
+    <p id="tiemporecord"></p>
+</body>
+<script>
+    var numero=Math.floor(Math.random() * (999 - 100)) + 100;;
+    document.getElementById("secret").innerHTML=numero;
+    var inicio = new Date().getTime();
+    var min = Infinity;
+function comprobacion() {
+document.getElementById("imput").innerHTML='<p><input id="entrada" type="number" placeholder="Escribe número"><p>';
+document.getElementById("boton").innerHTML='';
+document.getElementById("boton").innerHTML='<button id="boton" onclick="compr()">Comprueba</button>';
+}
+function compr(){  
+var entrada=document.getElementById("entrada").value;  
+if (entrada=="")
+{
+document.getElementById("resultado").innerHTML = "";
+}
+else if (entrada!=numero)
+{
+document.getElementById("resultado").innerHTML = "Lo siento, ese no es el número";
+}
+else if (entrada==numero)
+{
+document.getElementById("resultado").innerHTML ="¡Acertaste!";
+let fin,diferencia;
+                fin = new Date().getTime();
+                diferencia = (fin-inicio)/1000;
+                if (diferencia < min){
+                    min=diferencia;
+                }
+                document.getElementById("tiemposoluc").innerHTML = diferencia + "s";
+                let clave = document.getElementById("clave").value;
+            let valor = document.getElementById("min").value;
+            localStorage.setItem(clave,valor);
+            document.getElementById("tiemporecord").innerHTML = "Su tiempo récord es " + valor + "s";}
+else {document.getElementById("resultado").innerHTML = "Lo siento, ese no es el número";}
+
+}
+
+
+</script>
+</html>
