@@ -14,20 +14,27 @@
 <script>
 let numero=  Math.floor(Math.random() * 10) + 1;
 console.log(numero);
-
+var fallos=0;
+var record=0;
 function comprueba() {
 let entrada=document.getElementById("entrada").value;
+
 if (entrada>numero)
 {
-document.getElementById("resultado").innerHTML = "Lo siento, el número era menor...";
+document.getElementById("resultado").innerHTML = "Lo siento, el número era menor..."
+fallos +=1;
 }
 else if(entrada==numero)
 {
-document.getElementById("resultado").innerHTML ="¡Acertaste!";
+document.getElementById("resultado").innerHTML ="¡Acertaste! Número de fallos = "+fallos+" Su récord es "+record;
 }
 else {
-document.getElementById("resultado").innerHTML = "Lo sentimos, el número era mayor...";
+document.getElementById("resultado").innerHTML = "Lo sentimos, el número era mayor..."
+fallos +=1;
 }
+if (fallos < record){
+                    record=fallos;
+                }
 }
 </script>
 </body>
