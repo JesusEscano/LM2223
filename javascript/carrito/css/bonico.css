@@ -1,136 +1,150 @@
 * {
-    box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
 }
 
 ol, ul {
-	list-style: none;
+  list-style: none;
 }
+
 blockquote, q {
-	quotes: none;
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
- 
-  /* Top */
-.logo {align-self: center;}
-.cesta {float:right; padding:10px;}
-
-  
-  /* Enlaces de la navbar */
-  .navbar a {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 15px;
-    color: white;
-    padding: 14px 10px;
-    text-decoration: none;
-    text-align: center;
-  }
-  
-  /* cambio en hover */
-  .navbar a:hover {
-    color: black;
-  }
-
-img {
-  border:#017efc solid 3px;
+/* cabesa */
+.header {
+  font-size: 0;
+  vertical-align: top;
+  text-align: center;
 }
 
-.noborde img {
-border: 0px;
-  }
-  
-  /* Ese cuerpo */
-  .body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    line-height: 1;
-  }
-  
-
-  
-
-  
-  /* Column container */
-  .row {  
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  /* Columna 1 */
-  .c1 {
-    flex: 25%;
-    background-color: #aaa;
-    padding: 20px;
-    font-size: 25px;
-    vertical-align: top;
-    text-align: center;
-    color:black;
-  }
-  .entrc {
-    text-align: center;
-    font-size: larger;
-    font-weight: bold;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    padding-bottom: 5px;
-  }
-  
-  /* Columna 2 */
-  .c2 {
-    flex: 25%;
-    background-color: #aaa;
-    padding: 20px;
-  }
-
-    /* Columna 3 */
-.c3 {
-        flex: 25%;
-        background-color: #aaa;
-        padding: 20px;
-      }
-  /* Columna 4 */
-.c4 {
-    flex: 25%;
-    background-color: #aaa;
-    padding: 20px;
-  }
-  
-
-  /* Footer */
-  .footer {
-    padding: 20px;
-    color: white;
-    text-align: center;
-    background: black;
-  }
-
-.texto {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: medium;
-    padding: 5px;
-    text-align: justify;
+/* cesta */
+.cesta {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 3px;
+  position: relative;
 }
 
+.cesta a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.cesta .normal-image,
+.cesta .hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cesta .normal-image {
+  z-index: 1;
+}
+
+.cesta .hover-image {
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 0.5s ease;
+}
+
+.cesta:hover .hover-image {
+  opacity: 1;
+}
+
+/* Ese cuerpo */
+.bg {
+  background-image: url("../images/fondo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+.body {
+  font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1;
+}
+
+/* Column container */
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: calc(25% - 20px);
+  margin-bottom: 20px;
+  font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
+  color:black;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.column img {
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+
+
+/* Footer */
+.footer {
+  padding: 600px;
+  text-align: center;
+}
+
+
+
+/* Responsive layout */
+@media (min-width: 48em) {
+  .columns {
+  flex-wrap: nowrap;
+  }
+  }
   
-  /* Responsive layout */
-  @media screen and (max-width: 700px) {
-    .row, .navbar {   
-      flex-direction: column;
-    }
+  @media (max-width: 1100px) {
+  .columns {
+  flex-wrap: wrap;
+  justify-content: center;
+  }
+  .column {
+  width: calc(50% - 20px);
+  }
+  }
+  
+  @media (max-width: 768px) {
+  .columns {
+  flex-wrap: wrap;
+  justify-content: center;
+  }
+  .column {
+  width: 100%;
+  }
   }

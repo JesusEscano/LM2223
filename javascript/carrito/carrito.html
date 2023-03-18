@@ -5,53 +5,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito</title>
-    <link rel="bonico" href="css/bonico.css">
+<link rel="stylesheet" href="css/bonico.css">
 </head>
 <body>
-<div style="background:white;padding:0px">
         <!-- Header -->
-<div class="logo"><a href="carrito.html"><img src="images/logo.png" style="width:25%" alt="logo de InforLM" class="noborde img"></a></div>
-<div class="cesta"><a href='compra.html'><img src="images/normal.png"  alt="cesta" class="noborde img"></a></div>
- <h1>TIENDA DE INFORMÁTICA</h1>
- <table>
-    <tr><td><div class="img"><a href=""  target="_blank"><img src="images/lap.png" alt="portatil" /></a></div></td>
-        <td><a href=""  target="_blank"><img src="images/hdd.png"  alt="HDD" /></a></td>
-        <td><a href=""  target="_blank"><img src="images/key.png"  alt="teclado" /></a></td>
-        <td><a href=""  target="_blank"><img src="images/mouse.png"  alt="raton" /></a></td>
-    </tr>
-    <tr><td>Lenovo V15</td>
-        <td>Disco Duro Externo Toshiba Basic 2TB - USB 3.0</td>
-        <td>Mars Gaming MKMINIRES Mecánico</td>
-        <td>Subblim dual Flat</td>
-    </tr>
-    <tr><td><p>COMPRAR</p>
-            <p><button onclick="sumaport()">+</button>
-            <button onclick="restaport()">-</button></p>
-            <p id="cpor"></p></td>
-        <td><p>COMPRAR</p>
-            <p><button onclick="sumahdd()">+</button>
-            <button onclick="restahdd()">-</button>
-            <p id="chdd"></p></p>
-        <td><p>COMPRAR</p>
-            <p><button onclick="sumakey()">+</button>
-            <button onclick="restakey()">-</button></p>
-            <p id="ckey"></p></td>
-        <td><p>COMPRAR</p>
-            <p><button onclick="sumamou()">+</button>
-            <button onclick="restamou()">-</button></p>
-            <p id="cmou"></p></td></tr>
-    <tr><td id="portc" onclick="carport()">Ver características</td>
-        <td id="portc" onclick="carhdd()">Ver características</td>
-        <td id="portc" onclick="carkey()">Ver características</td>
-        <td id="portc" onclick="carmouse()">Ver características</td>
-    </tr>
-    <tr><td id="carp"></td>
-        <td id="hdd"></td>
-        <td id="keyb"></td>
-        <td id="mous"></td>
-    </tr>
-<table>
-<div onclick=""><a href='compra.html'>Botón para comprar</a></div>
+<div class="header"><a href='carrito.html'><img src="images/logo.png" width="100%" alt="Cabecera"></a></div>
+<div class="cesta">
+    <a href='compra.html'>
+      <img src="images/normal.png" alt="cestanormal" class="normal-image">
+      <img src="images/ok.png" alt="cesta" class="hover-image">
+    </a>
+  </div>
+<div class="bg">
+<div class="columns">
+    <div class="column">
+        <a href="" target="_blank"><img src="images/scr.png" alt="monitor"></a>
+        <p>Lenovo V15</p>
+        <p>COMPRAR</p>
+        <p>
+            <button onclick="sumamon()">+</button>
+            <button onclick="restamon()">-</button>
+        </p>
+        <p id="cmon"></p>
+        <p id="portc" onclick="carmon()">Ver características</p>
+        <p id="carp"></p>
+    </div>
+    <div class="column">
+        <a href="" target="_blank"><img src="images/router.png" alt="router"></a>
+        <p>Disco Duro Externo Toshiba Basic 2TB - USB 3.0</p>
+        <p>COMPRAR</p>
+        <p>
+            <button onclick="sumarou()">+</button>
+            <button onclick="restarou()">-</button>
+        </p>
+        <p id="crou"></p>
+        <p id="portc" onclick="carou()">Ver características</p>
+        <p id="rou"></p>
+    </div>
+    <div class="column">
+        <a href="" target="_blank"><img src="images/key.png" alt="teclado"></a>
+        <p>Mars Gaming MKMINIRES Mecánico</p>
+        <p>COMPRAR</p>
+        <p>
+            <button onclick="sumakey()">+</button>
+            <button onclick="restakey()">-</button>
+        </p>
+        <p id="ckey"></p>
+        <p id="portc" onclick="carkey()">Ver características</p>
+        <p id="keyb"></p>
+    </div>
+    <div class="column">
+        <a href="" target="_blank"><img src="images/mouse.png" alt="raton"></a>
+        <p>Subblim dual Flat</p>
+        <p>COMPRAR</p>
+        <p>
+            <button onclick="sumamou()">+</button>
+            <button onclick="restamou()">-</button>
+        </p>
+        <p id="cmou"></p>
+        <p id="portc" onclick="carmouse()">Ver características</p>
+        <p id="mous"></p>
+    </div>
+
+</div>
+<footer></footer>
+</div>
 <script src="js/script.js">
 </script>
 </body>
