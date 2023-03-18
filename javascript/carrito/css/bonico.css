@@ -83,7 +83,9 @@ table {
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 .body {
   font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
-  line-height: 1;
+}
+.text {
+  background-color: white;
 }
 
 /* Column container */
@@ -99,12 +101,11 @@ table {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: calc(25% - 20px);
+  width: 25%;
   margin-bottom: 20px;
   font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
   color:black;
   font-weight: bold;
-  line-height: 1;
 }
 
 .column img {
