@@ -39,9 +39,17 @@ function restamou() {
     else {mou-=1
     document.getElementById("cmou").innerHTML = "En carrito = "+mou};
 }
+ var isContentVisible = false;
+
 function carmon() {
-document.getElementById("cmon").innerHTML = "<p>6000 Mbps ultrafast WiFi</p><p>Memoria RAM: 8 GB DDR4 3200 MHz (4GB integradas + 4GB SO-DIMM); Ampliable hasta 12 GB (1x SO-DIMM)</p><p>Almacenamiento: 512 GB SSD M.2 2242 PCIe 3.0x4 NVMe</p><p>Unidad óptica: No</p><p>Display: 15.6' FHD (1920x1080) TN, 250 nits, Antirreflectante, 45% NTSC</p><p>Controlador gráfico Integrado: Intel UHD Graphics</p><p>Conectividad:</p><li>Ethernet 100/1000M</li><li>WiFi 802.11ac (2x2) + Bluetooth 5.0</li><p>Webcam: HD 720p con tapa de privacidad</p><p>Micrófono: Sí</p><p>Audio 2 altavoces estéreo de 1.5 W, Dolby Audio</p><p>Batería Integrada: 38 Wh</p><p>Conexiones:</p><li>1 x USB 3.2 Gen 1</li><li>1 x USB-C 3.2 Gen 1 (solo admite transferencia de datos)</li><li>1 x USB 2.0</li><li>1 x HDMI 1.4b</li><li>1 x Combo auriculares/micrófono jack (3.5 mm)</li><li>1 x Ethernet (RJ-45)</li><p>Firmware: TPM 2.0</p><p>Ranura de seguridad: Kensington Nano</p><p>Sistema operativo: Windows 10 Home 64 bits</p><p>Dimensiones (Ancho x Profundidad x Altura): 359,2 x 235,8 x 19,9 mm</p><p>Peso: 1,7 kg</p><p>Color: Negro</p></td>";
-}
+    const contentElement = document.getElementById("cmon");
+    if (isContentVisible) {
+        contentElement.innerHTML = "";
+        isContentVisible = false;
+      } else {
+        contentElement.innerHTML = "<p>·QHD (2560 x 1440)</p><p>·Fast IPS</p><p>·270Hz</p><p>·0.5 ms (GTG)</p><p>·027''</p><p>·DCI-P3 estándar de cine del 97%</p><p>·sRGB del 150%</p>";
+        isContentVisible = true;
+      }}
 function carou() {
 document.getElementById("rou").innerHTML =   "<div class='text'><p>Capacidad: 2 TB</p><p>2.0Ghz quad-core 64-bit CPU</p><p>Dual 2.5G WAN/LAN port</p><p>ASUS AiMesh compatible</p></div>";
 }

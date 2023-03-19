@@ -36,6 +36,11 @@ table {
   vertical-align: top;
   text-align: center;
 }
+.nav {
+  background-image: url("../images/feo.jpg");
+  background-repeat: repeat;
+  background-size: cover;
+}
 
 /* cesta */
 .cesta {
@@ -75,14 +80,19 @@ table {
 
 /* Ese cuerpo */
 .bg {
-  background-image: url("../images/fondo.png");
-  background-repeat: no-repeat;
-  background-size: cover;
+  /*background-image: url("../images/fondos.jpg");
+  background-repeat: repeat;
+  background-size: cover;*/
+  background-color: azure;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@font-face {
+  font-family: 'mecana';
+  src: url('fonts/mecana.ttf');
+}
 .body {
-  font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'mecana','Open Sans', Verdana, Geneva, Tahoma, sans-serif;
 }
 .text {
   background-color: white;
@@ -103,7 +113,7 @@ table {
   align-items: center;
   width: 25%;
   margin-bottom: 20px;
-  font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'mecana','Open Sans', Verdana, Geneva, Tahoma, sans-serif;
   color:black;
   font-weight: bold;
 }
