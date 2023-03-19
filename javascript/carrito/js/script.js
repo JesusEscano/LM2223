@@ -51,11 +51,29 @@ function carmon() {
         isContentVisible = true;
       }}
 function carou() {
-document.getElementById("rou").innerHTML =   "<div class='text'><p>Capacidad: 2 TB</p><p>2.0Ghz quad-core 64-bit CPU</p><p>Dual 2.5G WAN/LAN port</p><p>ASUS AiMesh compatible</p></div>";
-}
+    const contentElement = document.getElementById("crou");
+    if (isContentVisible) {
+        contentElement.innerHTML = "";
+        isContentVisible = false;
+      } else {
+        contentElement.innerHTML = "<p>C·Tasa de datos: <br>2.4GHz AX: 4x4 (Tx/Rx) 1024 QAM 20/40MHz, hasta 1148Mbps<br>5GHz AX: 4x4 (Tx/Rx) 1024 QAM 20/40/80/160MHz, hasta 4804Mbps</p><p>·Procesadro: 2.0 GHz quad-core processor</p><p>·Memoria: 256 MB Flash, 1 GB RAM</p><p>·Frecuencia: 2.4G Hz / 5 GHz</p></div>";
+        isContentVisible = true;
+    }}
 function carkey() {
-document.getElementById("keyb").innerHTML = "<p>Antifantasma: Si</p><p>Longitud de cable: 1,5 m</p><p>Alimentación: USB</p><p>Color del producto: Negro Monocromo</p><p>Material: Acrilonitrilo butadieno estireno (ABS)</p><p>Tipo de retroiluminación: LED RGB</p><p>Dimensiones de teclado (Ancho x Profundidad x Altura): 292 x 102 x 37 mm</p><p>Peso del teclado: 400 g</p><p>Formato del teclado: Mini</p><p>Idioma del teclado: Español</p><p>Interruptor del teclado: Interruptor mecánico</p><p>Teclado numérico: No</p><p>Tecnología de switch del teclado: Outemu Red</p>";
-}
+    const contentElement = document.getElementById("ckey");
+    if (isContentVisible) {
+        contentElement.innerHTML = "";
+        isContentVisible = false;
+      } else {
+        contentElement.innerHTML = "<p>·Conectitividad: USB 2.0 (Tipo C-A)</p><p>·Iluminación: Per-Key RGB LEDs</p><p>·Alimentación: USB</p><p>Dimensiones: 440x137x39 mm</p><p>·Peso: 1,06kg</p>";
+        isContentVisible = true;
+    }}
 function carmouse() {
-document.getElementById("mous").innerHTML = "<p>Capacidad de batería: 500 mAh</p><p>Fuente de energía: Baterías</p><p>Recargable: Si</p><p>Tecnología de batería: Litio</p><p>Tipo de puerto de carga: MicroUSB tipo B</p><p>Color del producto: Plata Monocromo</p><p>Factor de forma: Ambidextro</p><p>Mangos de goma: Si</p><p>Material: ABS sintéticos</p><p>Conectar y usar (Plug and Play): Si</p><p>Cantidad de botones: 4</p><p>Interfaz del dispositivo: RF Wireless+Bluetooth+USB Type-A</p><p>Resistencia de los botones (millones de clics): 5</p><p>Resolución de movimiento: 1600 DPI</p>";
-}
+    const contentElement = document.getElementById("cmou");
+    if (isContentVisible) {
+        contentElement.innerHTML = "";
+        isContentVisible = false;
+      } else {
+        contentElement.innerHTML = "<p>·Resolución: 16.000 DPI</p><p>·Velocidad máxima: 400 IPS</p><p>·Aceleración máxima: 40 G</p><p>·Conexiones: USB 2.0 (Tipo C-A)</p><p>·Batería: 500m Ah</p>";
+        isContentVisible = true;
+    }}
