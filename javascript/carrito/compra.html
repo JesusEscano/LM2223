@@ -5,8 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compra</title>
+    <link rel="stylesheet" href="css/form.css">
 </head>
 <body>
-    hola
+    <div class="columns">
+        <div class="column">
+    <p>Nombre: <input type="text" name="" id="nombre"><label for="" id=fnombre></label></p>
+    <p>Apellidos: <input type="text" name="" id="apellido"><label for=""id=fape></label></p>
+    <p>Correo electrónico: <input type="text" name="" id="correo"><label for="" id=fmail></label></p>
+    <p>DNI: <input id="DNI" type="number" name="DNI" placeholder="000000000"><label for="" id=fdni></label></p>
+    <p>Tarjeta de crédito: <input id="tarj" type="number" name="tarj"><label for="" id=ftarj></label></p>
+    <p><button onclick="comprobacion()">Confirmar compra</button></p>
+    </div>
+    <div class="column">
+        <p>PRODUCTOS:</p>
+        <p id="moni"></p>
+        <p id="rout"></p>
+        <p id="tecl"></p>
+        <p id="rato"></p>
+    <script src="js/script.js">
+    </script>
 </body>
 </html>

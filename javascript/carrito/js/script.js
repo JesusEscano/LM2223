@@ -77,3 +77,23 @@ function carmouse() {
         contentElement.innerHTML = "<p>·Resolución: 16.000 DPI</p><p>·Velocidad máxima: 400 IPS</p><p>·Aceleración máxima: 40 G</p><p>·Conexiones: USB 2.0 (Tipo C-A)</p><p>·Batería: 500m Ah</p>";
         isContentVisible = true;
     }}
+
+function guarda(){
+    
+}
+
+
+function comprobacion(){ 
+        var correo = document.getElementById("correo").value;
+        var mail = document.getElementById("fmail").value;
+        var mailcom = /^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+        var DNI = document.getElementById("DNI").value;
+        var numero=8;
+        var contador=parseInt(DNI.length);
+        var DNIc=DNI%23;
+        var opciones="TRWAGMYFPDXBNJZSQVHLCKET";
+        var DNIL=opciones.substring(DNIc,DNIc+1);
+        if(correo==""){document.getElementById("fmail").style.color = "red"; document.getElementById("fmail").innerHTML = " Por favor, introduzca una dirección de correo"} else if(!mailcom.exec(correo)){document.getElementById("fmail").style.color = "red"; document.getElementById("fmail").innerHTML = " Por favor, introduzca una dirección de correo correcta"} else{document.getElementById("fmail").innerHTML=""}
+        if(contador!=numero){document.getElementById("fdni").style.color = "red"; document.getElementById("fdni").innerHTML = " Por favor, introduzca un DNI correcto"}else{document.getElementById("fdni").innerHTML=""}    
+    }
+    

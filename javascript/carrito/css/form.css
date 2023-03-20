@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@font-face {
+  font-family: 'mecana';
+  src: url('fonts/mecana.ttf');
+}
+.body {
+  font-family: 'mecana','Open Sans', Verdana, Geneva, Tahoma, sans-serif;
+}
+/* Column container */
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin-bottom: 20px;
+    font-family: 'mecana','Open Sans', Verdana, Geneva, Tahoma, sans-serif;
+    color:black;
+    font-weight: bold;
+  }

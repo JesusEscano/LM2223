@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario JSON</title>
+</head>
+<body>
+    <p id="contenido"></p>
+ 
+        <p>Nombre: <input type="text" name="" id="nombre"><label for="" id=fnombre></label></p>
+        <p>Apellidos: <input type="text" name="" id="apellido"><label for=""id=fape></label></p>
+        <p>Email: <input type="email" name="" id="email"><label for=""id=femail></label></p>
+        <button onclick="registrar()">Registrar</button>
+ 
+    <script>
+        var objeto = localStorage.getItem("usuario");
+        if (objeto=null) {document.getElementById("contenido").innerHTML = objeto}
+function registrar() {
+    let usuario = {
+        nombre: document.getElementById("nombre").value,
+        apellido: document.getElementById("apellido").value,
+        email: document.getElementById("email").value,
+    };
+    localStorage.setItem("usuario",JSON.stringify(usuario));
+    document.getElementById("contenido").innerHTML = JSON.stringify(usuario);
+}
+    </script>
+</body>
+</html>
