@@ -7,13 +7,13 @@
     <title>Carrito</title>
 <link rel="stylesheet" href="css/bonico.css">
 </head>
-<body>
+<body onload="cargarValores()">
         <!-- Header -->
 <div class="header"><a href='carrito.html'><img src="images/logo.png" width="100%" alt="Cabecera"></a></div>
 <div class="cesta">
     <a href='compra.html'>
       <img src="images/normal.png" alt="cestanormal" class="normal-image">
-      <img src="images/ok.png" alt="cesta" class="hover-image">
+      <img src="images/ok.png" onclick="guarda()" alt="cesta" class="hover-image">
     </a>
   </div>
 </div>
@@ -21,28 +21,41 @@
 <div class="columns">
     <div class="column">
         <a href="" target="_blank"><img src="images/scr.png" alt="monitor"></a>
-        <div class="text"><p>ROG Strix XG27AQM EVA EDITION</p></div>
-        <div class="text"><p>733,89 €</p></div>
+<p>ROG Strix XG27AQM EVA EDITION</p>
+<p>733,89 €</p>
         <p>
-            <img src="images/mas.png" onclick="valores('monitor', 1)" alt="Más">
-            <img src="images/menos.png" onclick="valores('monitor', -1)" alt="Menos">
+          <img src="images/mas.png" onclick="valores('monitor', 1)" alt="Más">
+          <img src="images/menos.png" onclick="valores('monitor', -1)" alt="Menos">
         </p>
         <p id="cmonitor"></p>
-        <p id="producto1" onclick="detalles('cmon', 'monito')">Ver características</p>
-        <div id="monito"></div>
-    </div>
+        <p id="producto1" onclick="toggleDetails('monito')">Ver características</p>
+        <div class="details" id="monito" style="display:none;">
+          <p>·QHD (2560 x 1440)</p>
+          <p>·Fast IPS</p>
+          <p>·270Hz</p>
+          <p>·0.5 ms (GTG)</p>
+          <p>·027''</p>
+          <p>·DCI-P3 estándar de cine del 97%</p>
+          <p>·sRGB del 150%</p>
+        </div>
+      </div>
     <div class="column">
         <a href="" target="_blank"><img src="images/router.png" alt="router"></a>
-        <div class="text"><p>ROG RAPTURE GT-AX6000 EVA EDITION</p></div>
-        <p>499 €</p>
+<p>ROG RAPTURE GT-AX6000 EVA EDITION</p>
+<p>499 €</p>
         <p>
             <img src="images/mas.png" onclick="valores('router', 1)" alt="Más">
             <img src="images/menos.png" onclick="valores('router', -1)" alt="Menos">
         </p>
         <p id="crouter"></p>
-        <p id="producto2" onclick="detalles('crou', 'rourr')">Ver características</p>
-        <div id="rourr"></div>
-    </div>
+        <p id="producto2" onclick="toggleDetails('rout')">Ver características</p>
+        <div class="details" id="rout" style="display:none;">
+        <p>·Tasa de datos: <br>2.4GHz AX: 4x4 (Tx/Rx) 1024 QAM 20/40MHz, hasta 1148Mbps<br>5GHz AX: 4x4 (Tx/Rx) 1024 QAM 20/40/80/160MHz, hasta 4804Mbps</p>
+        <p>·Procesador: 2.0 GHz quad-core processor</p>
+        <p>·Memoria: 256 MB Flash, 1 GB RAM</p>
+        <p>·Frecuencia: 2.4G Hz / 5 GHz</p>
+        </div>
+      </div>
     <div class="column">
         <a href="" target="_blank"><img src="images/key.png" alt="teclado"></a>
         <p>ROG Strix Scope RX EVA Edition</p>
@@ -52,9 +65,15 @@
             <img src="images/menos.png" onclick="valores('key', -1)" alt="Menos">
         </p>
         <p id="ckey"></p>
-        <p id="producto3" onclick="detalles('ckey', 'tec')">Ver características</p>
-        <div id="tec"></div>
-    </div>
+        <p id="producto3" onclick="toggleDetails('tec')">Ver características</p>
+        <div class="details" id="tec" style="display:none;">
+        <p>·Conectitividad: USB 2.0 (Tipo C-A)</p>
+        <p>·Iluminación: Per-Key RGB LEDs</p>
+        <p>·Alimentación: USB</p>
+        <p>Dimensiones: 440x137x39 mm</p>
+        <p>·Peso: 1,06kg</p>
+        </div>
+        </div>
     <div class="column">
         <a href="" target="_blank"><img src="images/mouse.png" alt="raton"></a>
         <p>ROG Keris Wireless EVA Edition</p>
@@ -64,11 +83,15 @@
             <img src="images/menos.png" onclick="valores('mou', -1)" alt="Menos">
         </p>
         <p id="cmou"></p>
-        <p id="producto4" onclick="detalles('cmou', 'ratita')">Ver características</p>
-        <div id="ratita"></div>
-    </div>
-
-</div>
+        <p id="producto4" onclick="toggleDetails('rat')">Ver características</p>
+        <div class="details" id="rat" style="display:none;">
+        <p>·Resolución: 16.000 DPI</p>
+        <p>·Velocidad máxima: 400 IPS</p>
+        <p>·Aceleración máxima: 40 G</p>
+        <p>·Conexiones: USB 2.0 (Tipo C-A)</p>
+        <p>·Batería: 500m Ah</p>
+        </div>
+        </div>
 <footer></footer>
 </div>
 <script src="js/script.js">

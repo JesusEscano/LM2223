@@ -7,15 +7,24 @@
     <title>Compra</title>
     <link rel="stylesheet" href="css/form.css">
 </head>
-<body>
+<body onload="cargarValores()">
     <div class="columns">
         <div class="column">
-    <p>Nombre: <input type="text" name="" id="nombre"><label for="" id=fnombre></label></p>
-    <p>Apellidos: <input type="text" name="" id="apellido"><label for=""id=fape></label></p>
-    <p>Correo electrónico: <input type="text" name="" id="correo"><label for="" id=fmail></label></p>
-    <p>DNI: <input id="DNI" type="number" name="DNI" placeholder="000000000"><label for="" id=fdni></label></p>
-    <p>Tarjeta de crédito: <input id="tarj" type="number" name="tarj"><label for="" id=ftarj></label></p>
-    <p><button onclick="comprobacion()">Confirmar compra</button></p>
+            <p>Nombre: <input type="text" name="" id="nombre"><label for="" id=fnombre></label></p>
+            <p>Apellidos: <input type="text" name="" id="apellido"><label for=""id=fape></label></p>
+            <p>Correo electrónico: <input type="text" name="" id="correo"><label for="" id=fmail></label></p>
+            <p>DNI: <input id="DNI" type="number" name="DNI" placeholder="000000000"><label for="" id=fdni></label></p>
+            <p>Número de tarjeta de crédito: <input type="text" id="nro_tarjeta"><label for="" id=ftarj></label></p>
+            <p>Tipo de tarjeta de crédito:
+            <select id="lstTipoTarjeta">
+              <option value="VISA">VISA</option>
+              <option value="MASTERCARD">MasterCard</option>
+              <option value="AMEX">AMEX</option>
+              <option value="CABAL">Cabal</option>
+              <option value="NARANJA">Naranja</option>
+            </select></p>
+            <p><button onclick="comprobacion(); fValidarTarjeta(); todook()">Confirmar compra</button></p>
+            <p id="aceptada"></p>
     </div>
     <div class="column">
         <p>PRODUCTOS:</p>
@@ -23,7 +32,9 @@
         <p id="rout"></p>
         <p id="tecl"></p>
         <p id="rato"></p>
-    <script src="js/script.js">
-    </script>
+        <p id="total"></p>
+        </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
