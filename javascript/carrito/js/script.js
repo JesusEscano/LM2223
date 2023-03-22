@@ -68,7 +68,7 @@ function comprobacion(){
       var MASTERCARD = /^5[1-5][0-9]{14}$/;
       var AMEX = /^3[47][0-9]{13}$/;
       var CABAL = /^(6042|6043|6044|6045|6046|5896){4}[0-9]{12}$/;
-      var NARANJA = /^(589562|402917|402918|527571|527572|0377798|0377799)[0-9]*$/;
+      var NARANJA = /^(589562|402917|402918|527571|527572|0377798|0377799)\d{10}$/;
     
       // Validación del número de tarjeta
       var valido = false;
@@ -111,8 +111,24 @@ function luhn(value) {
   }
 
 function todook(){
+  var correo = document.getElementById("correo").value;
+  var mailcom = /^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+  var DNI = document.getElementById("DNI").value;
+  var numero=8;
+  var contador=parseInt(DNI.length);
+  var DNIc=DNI%23;
+  var opciones="TRWAGMYFPDXBNJZSQVHLCKET";
+  var DNIL=opciones.substring(DNIc,DNIc+1);
+  var opt = $("#lstTipoTarjeta option:selected").val();
+  var codigo = $("#nro_tarjeta").val().replace(/-/g, ''); 
+  var VISA = /^4[0-9]{12}(?:[0-9]{3})?$/;
+  var MASTERCARD = /^5[1-5][0-9]{14}$/;
+  var AMEX = /^3[47][0-9]{13}$/;
+  var CABAL = /^(6042|6043|6044|6045|6046|5896){4}[0-9]{12}$/;
+  var NARANJA = /^(589562|402917|402918|527571|527572|0377798|0377799)\d{10}$/;
+  
   var correoValido = (correo !== "" && mailcom.exec(correo));
-  var dniValido = (DNI !== "" && contador == numero);
+  var dniValido = (DNI !== "" && contador === numero);
   var tarjetaValida = fValidarTarjeta();
   if (correoValido && dniValido && tarjetaValida) {
     document.getElementById("aceptada").style.color = "green"; document.getElementById("aceptada").innerHTML = " Gracias por realizar su pedido.";
