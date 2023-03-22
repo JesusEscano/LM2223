@@ -43,7 +43,7 @@ var objetos = {
 
 
 function guarda(){
-    
+  document.getElementById("moni").innerHTML  = "<p>Monitor</p><p>Cantidad: "+monitor+"</p><p>Precio= "+Parseint(monitor)*733.89;
 }
 
 
@@ -60,4 +60,4 @@ function comprobacion(){
         if(correo==""){document.getElementById("fmail").style.color = "red"; document.getElementById("fmail").innerHTML = " Por favor, introduzca una dirección de correo"} else if(!mailcom.exec(correo)){document.getElementById("fmail").style.color = "red"; document.getElementById("fmail").innerHTML = " Por favor, introduzca una dirección de correo correcta"} else{document.getElementById("fmail").innerHTML=""}
         if(contador!=numero){document.getElementById("fdni").style.color = "red"; document.getElementById("fdni").innerHTML = " Por favor, introduzca un DNI correcto"}else{document.getElementById("fdni").innerHTML=""}    
     }
-    
+
