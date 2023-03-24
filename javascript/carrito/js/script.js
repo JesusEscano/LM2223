@@ -38,7 +38,7 @@ var objetos = {
     if(objetos.router===0){document.getElementById("rout").innerHTML = ""} else {document.getElementById("rout").innerHTML = objetos.router+" ROG RAPTURE GT-AX6000 EVA EDITION = "+(objetos.router*parseFloat(499))+" €"};
     if(objetos.key===0){document.getElementById("tecl").innerHTML = ""} else {document.getElementById("tecl").innerHTML = objetos.key+" ROG Strix Scope RX EVA Edition = "+(objetos.key*parseFloat(169))+" €"};
     if(objetos.mou===0){document.getElementById("rato").innerHTML = ""} else {document.getElementById("rato").innerHTML = objetos.mou+" ROG Keris Wireless EVA Edition = "+(objetos.mou*parseFloat(115.88))+" €"};
-    document.getElementById("total").innerHTML = "TOTAL = "+(objetos.monitor*parseFloat(733.89)+objetos.router*parseFloat(499)+objetos.key*parseFloat(169)+objetos.mou*parseFloat(115.88))+" €";
+    document.getElementById("total").innerHTML = "TOTAL = "+(objetos.monitor*parseFloat(733.89)+objetos.router*parseFloat(499)+objetos.key*parseFloat(169)+objetos.mou*parseFloat(115.88)).toFixed(2)+" €";
   }
 
 
