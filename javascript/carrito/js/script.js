@@ -1,49 +1,101 @@
 var objetos = {
-    monitor: 0,
-    router: 0,
-    key: 0,
-    mou: 0
-  };
-  
-  function valores(objeto, cambio) {
-    objetos[objeto] += cambio;
-    var loquesea = "c" + objeto;
-    var valor = objetos[objeto];
-    if (valor < 0) { 
-      objetos[objeto] = 0; 
-      document.getElementById(loquesea).innerHTML = "En carrito = " + objetos[objeto];
-    } else if (valor === 0) {
-      document.getElementById(loquesea).innerHTML = "";
-    } else {
-      document.getElementById(loquesea).innerHTML = "En carrito = " + objetos[objeto];
+  monitor: 0,
+  router: 0,
+  key: 0,
+  mou: 0
+};
+
+function valores(objeto, cambio) {
+  objetos[objeto] += cambio;
+  var loquesea = "c" + objeto;
+  var valor = objetos[objeto];
+  if (valor < 0) {
+    objetos[objeto] = 0;
+    document.getElementById(loquesea).innerHTML = "En carrito: " + objetos[objeto];
+  } else if (valor === 0) {
+    document.getElementById(loquesea).innerHTML = "";
+  } else {
+    document.getElementById(loquesea).innerHTML = "En carrito: " + objetos[objeto];
+  }
+
+
+  guarda();
+}
+
+function onloadCarrito() {
+  var loquesea, valor;
+  for (var objeto in objetos) {
+    loquesea = "c" + objeto;
+    valor = objetos[objeto];
+    if (valor > 0) {
+      document.getElementById(loquesea).innerHTML = "En carrito: " + valor;
     }
+    guarda();
+  }
+}
+
+function vacia() {
+    objetos.monitor = 0;
+    objetos.router = 0;
+    objetos.key = 0;
+    objetos.mou = 0;
+    
+    document.getElementById("cmonitor").innerHTML = "";
+    document.getElementById("crouter").innerHTML = "";
+    document.getElementById("ckey").innerHTML = "";
+    document.getElementById("cmou").innerHTML = "";
+    
+    document.getElementById("monitor-cantidad").innerHTML = "0";
+    document.getElementById("router-cantidad").innerHTML = "0";
+    document.getElementById("key-cantidad").innerHTML = "0";
+    document.getElementById("mou-cantidad").innerHTML = "0";
+    
+    guarda();
   }
 
- function guarda() {
-  localStorage.setItem("objetos", JSON.stringify(objetos));}
+function guarda() {
+  localStorage.setItem("objetos", JSON.stringify(objetos));
+}
 
-  function toggleDetails(id) {
-    const details = document.getElementById(id);
-    if (details.style.display === "none") {
-      details.style.display = "block";
-    } else {
-      details.style.display = "none";
-    }
+function toggleDetails(id) {
+  const details = document.getElementById(id);
+  if (details.style.display === "none") {
+    details.style.display = "block";
+  } else {
+    details.style.display = "none";
   }
+}
 
-
-  function cargarValores() {
-    objetos = JSON.parse(localStorage.getItem("objetos"));
-    if(objetos.monitor===0){document.getElementById("moni").innerHTML = ""} else {document.getElementById("moni").innerHTML = objetos.monitor+" ROG Strix XG27AQM EVA EDITION = "+(objetos.monitor*(733.89))+" €"};
-    if(objetos.router===0){document.getElementById("rout").innerHTML = ""} else {document.getElementById("rout").innerHTML = objetos.router+" ROG RAPTURE GT-AX6000 EVA EDITION = "+(objetos.router*(499))+" €"};
-    if(objetos.key===0){document.getElementById("tecl").innerHTML = ""} else {document.getElementById("tecl").innerHTML = objetos.key+" ROG Strix Scope RX EVA Edition = "+(objetos.key*(169))+" €"};
-    if(objetos.mou===0){document.getElementById("rato").innerHTML = ""} else {document.getElementById("rato").innerHTML = objetos.mou+" ROG Keris Wireless EVA Edition = "+(objetos.mou*(115.88))+" €"};
-    document.getElementById("total").innerHTML = "TOTAL = "+(objetos.monitor*(733.89)+objetos.router*(499)+objetos.key*(169)+objetos.mou*(115.88)).toFixed(2)+" €";
+function cargarValores() {
+  const objetosString = localStorage.getItem("objetos");
+  if (objetosString) {
+    objetos = JSON.parse(objetosString);
   }
-  
+  if (objetos.monitor === 0 || objetos.monitor=="" || objetos.monitor==null) {
+    if (document.getElementById("moni")) {document.getElementById("moni").innerHTML = "";}
+  } else {
+    if (document.getElementById("moni")) {document.getElementById("moni").innerHTML = objetos.monitor + " ROG Strix XG27AQM EVA EDITION = " + objetos.monitor * 733.89 + " €";}
+  }
+  if (objetos.router === 0 || objetos.router =="" || objetos.router==null) {
+    if (document.getElementById("rout")) {document.getElementById("rout").innerHTML = "";}
+  } else {
+    if (document.getElementById("rout")) {document.getElementById("rout").innerHTML = objetos.router +" ROG RAPTURE GT-AX6000 EVA EDITION = " +objetos.router * 499 +" €";}
+  }
+  if (objetos.key === 0 || objetos.key =="" || objetos.key==null) {
+    if (document.getElementById("tecl")) {document.getElementById("tecl").innerHTML = "";}
+  } else {
+    if (document.getElementById("tecl")) {document.getElementById("tecl").innerHTML = objetos.key + " ROG Strix Scope RX EVA Edition = " + objetos.key * 169 + " €";}
+  }
+  if (objetos.mou === 0 || objetos.mou =="" || objetos.mou==null) {
+    if (document.getElementById("rato")) {document.getElementById("rato").innerHTML = "";}
+  } else {
+    if (document.getElementById("rato")) {document.getElementById("rato").innerHTML = objetos.mou +" ROG Keris Wireless EVA Edition = " +objetos.mou * 115.88 +" €";}
+  }
+  if (document.getElementById("total")) {document.getElementById("total").innerHTML ="TOTAL = " +(objetos.monitor * 733.89 + objetos.router * 499 +objetos.key * 169 +objetos.mou * 115.88).toFixed(2) +" €";
+  }
+}
 
-
-
+window.addEventListener("load", cargarValores);
 
 function comprobacion(){ 
         var correo = document.getElementById("correo").value;
@@ -134,8 +186,13 @@ function todook(){
   if (correoValido && dniValido && tarjetaValida) {
     document.getElementById("aceptada").style.color = "green"; document.getElementById("aceptada").innerHTML = " Gracias por realizar su pedido.";
 }}
-        
-        
+
+
+const cansao = document.forms.cansao;
+
+cansao.addEventListener('submit', (event) => {
+  event.preventDefault(); 
+});
         
         
         

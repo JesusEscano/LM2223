@@ -12,23 +12,21 @@
 <div class="header"><a href='carrito.html'><img src="images/logo.png" width="100%" alt="Cabecera"></a></div>
 <div class="cesta">
     <a href='compra.html'>
-      <img src="images/normal.png" alt="cestanormal" class="normal-image">
-      <img src="images/ok.png" onclick="guarda()" alt="cesta" class="hover-image">
-    </a>
+      <img src="images/confbot.png" onclick="guarda()" alt="cestanormal"> </a>
+      <img src="images/warning.png" alt="warning">
+      <img src="images/vacbot.png" onclick="vacia()" alt="cestavaciar" style="cursor: pointer">
   </div>
-</div>
-<div class="bg">
 <div class="columns">
     <div class="column">
         <a href="" target="_blank"><img src="images/scr.png" alt="monitor"></a>
 <p>ROG Strix XG27AQM EVA EDITION</p>
 <p>733,89 €</p>
         <p>
-          <img src="images/mas.png" onclick="valores('monitor', 1)" alt="Más">
-          <img src="images/menos.png" onclick="valores('monitor', -1)" alt="Menos">
+          <img src="images/mas.png" onclick="valores('monitor', 1)" alt="Más" style="cursor: pointer">
+          <img src="images/menos.png" onclick="valores('monitor', -1)" alt="Menos" style="cursor: pointer">
         </p>
         <p id="cmonitor"></p>
-        <p id="producto1" onclick="toggleDetails('monito')">Ver características</p>
+        <p id="producto1" onclick="toggleDetails('monito')" style="cursor: pointer">Ver características</p>
         <div class="details" id="monito" style="display:none;">
           <p>·QHD (2560 x 1440)</p>
           <p>·Fast IPS</p>
@@ -44,11 +42,11 @@
 <p>ROG RAPTURE GT-AX6000 EVA EDITION</p>
 <p>499 €</p>
         <p>
-            <img src="images/mas.png" onclick="valores('router', 1)" alt="Más">
-            <img src="images/menos.png" onclick="valores('router', -1)" alt="Menos">
+            <img src="images/mas.png" onclick="valores('router', 1)" alt="Más" style="cursor: pointer">
+            <img src="images/menos.png" onclick="valores('router', -1)" alt="Menos" style="cursor: pointer">
         </p>
         <p id="crouter"></p>
-        <p id="producto2" onclick="toggleDetails('rout')">Ver características</p>
+        <p id="producto2" onclick="toggleDetails('rout')" style="cursor: pointer">Ver características</p>
         <div class="details" id="rout" style="display:none;">
         <p>·Tasa de datos: <br>2.4GHz AX: 4x4 (Tx/Rx) 1024 QAM 20/40MHz, hasta 1148Mbps<br>5GHz AX: 4x4 (Tx/Rx) 1024 QAM 20/40/80/160MHz, hasta 4804Mbps</p>
         <p>·Procesador: 2.0 GHz quad-core processor</p>
@@ -61,11 +59,11 @@
         <p>ROG Strix Scope RX EVA Edition</p>
         <p>169 €</p>
         <p>
-            <img src="images/mas.png" onclick="valores('key', 1)" alt="Más">
-            <img src="images/menos.png" onclick="valores('key', -1)" alt="Menos">
+            <img src="images/mas.png" onclick="valores('key', 1)" alt="Más" style="cursor: pointer">
+            <img src="images/menos.png" onclick="valores('key', -1)" alt="Menos" style="cursor: pointer">
         </p>
         <p id="ckey"></p>
-        <p id="producto3" onclick="toggleDetails('tec')">Ver características</p>
+        <p id="producto3" onclick="toggleDetails('tec')" style="cursor: pointer">Ver características</p>
         <div class="details" id="tec" style="display:none;">
         <p>·Conectitividad: USB 2.0 (Tipo C-A)</p>
         <p>·Iluminación: Per-Key RGB LEDs</p>
@@ -79,11 +77,11 @@
         <p>ROG Keris Wireless EVA Edition</p>
         <p>115,88 €</p>
         <p>
-            <img src="images/mas.png" onclick="valores('mou', 1)" alt="Más">
-            <img src="images/menos.png" onclick="valores('mou', -1)" alt="Menos">
+            <img src="images/mas.png" onclick="valores('mou', 1)" alt="Más" style="cursor: pointer">
+            <img src="images/menos.png" onclick="valores('mou', -1)" alt="Menos" style="cursor: pointer">
         </p>
         <p id="cmou"></p>
-        <p id="producto4" onclick="toggleDetails('rat')">Ver características</p>
+        <p id="producto4" onclick="toggleDetails('rat')" style="cursor: pointer">Ver características</p>
         <div class="details" id="rat" style="display:none;">
         <p>·Resolución: 16.000 DPI</p>
         <p>·Velocidad máxima: 400 IPS</p>
@@ -95,6 +93,6 @@
 <footer></footer>
 </div>
 <script src="js/script.js"></script>
-<script>cargarValores();</script>
+<script>cargarValores(); onloadCarrito();</script>
 </body>
 </html>
