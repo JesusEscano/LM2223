@@ -10,8 +10,12 @@
 <body>
     <div class="columns">
         <div class="column">
+            <form name="cansao" action="">
             <p>Nombre: <input type="text" name="" id="nombre"><label for="" id=fnombre></label></p>
             <p>Apellidos: <input type="text" name="" id="apellido"><label for=""id=fape></label></p>
+            <p>Teléfono de contacto: <input type="number" name="" id="tlf"><label for=""id=ftlf></label></p>
+            <p>Dirección de envío: <input type="text" name="" id="env" style="width: 50%"><label for=""id=fenv></label></p>
+            <p>CP: <input type="number" name="" id="CP" style="width: 100px"><label for=""id=fCP></label> Provincia: <input type="text" name="" id="ciu"><label for=""id=fciu></label></p>
             <p>Correo electrónico: <input type="text" name="" id="correo"><label for="" id=fmail></label></p>
             <p>DNI: <input id="DNI" type="number" name="DNI" placeholder="000000000"><label for="" id=fdni></label></p>
             <p>Número de tarjeta de crédito: <input type="text" id="nro_tarjeta"><label for="" id=ftarj></label></p>
@@ -25,6 +29,7 @@
             </select></p>
             <p><button onclick="comprobacion(); fValidarTarjeta(); todook()">Confirmar compra</button></p>
             <p id="aceptada"></p>
+        </form>
     </div>
     <div class="column">
         <p>PRODUCTOS:</p>
