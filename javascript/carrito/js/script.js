@@ -111,43 +111,68 @@ function comprobacion(){
         }
 
 
-    function fValidarTarjeta() {
-      // Obtiene el tipo de tarjeta seleccionado y el número de tarjeta ingresado
-      var opt = $("#lstTipoTarjeta option:selected").val();
-      var codigo = $("#nro_tarjeta").val().replace(/-/g, ''); // quita los guiones del número de tarjeta
-    
-      // Expresiones regulares para validar los diferentes tipos de tarjeta
-      var VISA = /^4[0-9]{12}(?:[0-9]{3})?$/;
-      var MASTERCARD = /^5[1-5][0-9]{14}$/;
-      var AMEX = /^3[47][0-9]{13}$/;
-      var CABAL = /^(6042|6043|6044|6045|6046|5896){4}[0-9]{12}$/;
-      var NARANJA = /^(589562|402917|402918|527571|527572|0377798|0377799)\d{10}$/;
-    
-      // Validación del número de tarjeta
-      var valido = false;
-      if (opt == "VISA") {
-        valido = VISA.test(codigo);
-      } else if (opt == "MASTERCARD") {
-        valido = MASTERCARD.test(codigo);
-      } else if (opt == "AMEX") {
-        valido = AMEX.test(codigo);
-      } else if (opt == "CABAL") {
-        valido = CABAL.test(codigo);
-      } else if (opt == "NARANJA") {
-        valido = NARANJA.test(codigo);
-      }
-    
-      if (!valido) {
-        document.getElementById("ftarj").style.color = "red";
-        document.getElementById("ftarj").innerHTML = " Por favor, introduzca un número de tarjeta válido para el tipo seleccionado";
-      } else if (!luhn(codigo)) {
-        document.getElementById("ftarj").style.color = "red";
-        document.getElementById("ftarj").innerHTML = " Por favor, introduzca un número de tarjeta válido";
-      } else {
-        document.getElementById("ftarj").innerHTML = "";
-      }
-      return valido ; 
-    }
+        function fValidarTarjeta() {
+          // Obtiene el tipo de tarjeta seleccionado y el número de tarjeta ingresado
+          var opt = $("#lstTipoTarjeta option:selected").val();
+          var codigo = $("#nro_tarjeta").val().replace(/-/g, ''); // quita los guiones del número de tarjeta
+          var cvv = $("#cvv").val();
+          var valit = $("#valit").val();
+        
+          // Expresiones regulares para validar los diferentes tipos de tarjeta
+          var VISA = /^4[0-9]{12}(?:[0-9]{3})?$/;
+          var MASTERCARD = /^5[1-5][0-9]{14}$/;
+          var AMEX = /^3[47][0-9]{13}$/;
+          var CABAL = /^(6042|6043|6044|6045|6046|5896){4}[0-9]{12}$/;
+          var NARANJA = /^(589562|402917|402918|527571|527572|0377798|0377799)\d{10}$/;
+        
+          // Validación del número de tarjeta
+          var valido = false;
+          if (opt == "VISA") {
+            valido = VISA.test(codigo);
+          } else if (opt == "MASTERCARD") {
+            valido = MASTERCARD.test(codigo);
+          } else if (opt == "AMEX") {
+            valido = AMEX.test(codigo);
+          } else if (opt == "CABAL") {
+            valido = CABAL.test(codigo);
+          } else if (opt == "NARANJA") {
+            valido = NARANJA.test(codigo);
+          }
+        
+          // Validación de la fecha de validez
+          var hoy = new Date();
+          var valitDate = new Date(valit);
+          if (valitDate < hoy) {
+            $("#fvalit").css("color", "red");
+            $("#fvalit").text(" La tarjeta ha caducado");
+            valido = false;
+          } else {
+            $("#fvalit").text("");
+          }
+        
+          // Validación del CVV de seguridad
+          var CVV = /^[0-9]{3,4}$/;
+          if (!CVV.test(cvv)) {
+            $("#fcvv").css("color", "red");
+            $("#fcvv").text(" Introduzca un CVV válido");
+            valido = false;
+          } else {
+            $("#fcvv").text("");
+          }
+        
+          // Validación del número de tarjeta mediante el algoritmo de Luhn
+          if (!valido) {
+            $("#ftarj").css("color", "red");
+            $("#ftarj").text(" Por favor, introduzca un número de tarjeta válido para el tipo seleccionado");
+          } else if (!luhn(codigo)) {
+            $("#ftarj").css("color", "red");
+            $("#ftarj").text(" Por favor, introduzca un número de tarjeta válido");
+          } else {
+            $("#ftarj").text("");
+          }
+          return valido;
+        }
+        
 function luhn(value) {
       // Accept only digits, dashes or spaces
       if (/[^0-9-\s]+/.test(value)) return false;
