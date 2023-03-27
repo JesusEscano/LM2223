@@ -213,11 +213,7 @@ function todook(){
 }}
 
 
-const cansao = document.forms.cansao;
 
-cansao.addEventListener('submit', (event) => {
-  event.preventDefault(); 
-});
         
         
         
