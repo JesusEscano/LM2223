@@ -31,7 +31,7 @@
             <p>CVV: <input type="text" id="cvv"><label for="" id=fcvv></label></p>
             <p><button onclick="comprobacion(); fValidarTarjeta(); todook()">Confirmar compra</button></p>
             <p id="aceptada"></p>
-        </form>
+       
     </div>
     <div class="column">
         <p>PRODUCTOS:</p>
@@ -43,6 +43,6 @@
         </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/script.js"></script>
-    <script>cargarValores();</script>
+    <script>cargarValores(); onloadCarrito();</script>
 </body>
 </html>

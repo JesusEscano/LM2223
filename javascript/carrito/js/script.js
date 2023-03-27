@@ -111,7 +111,7 @@ function comprobacion(){
         }
 
 
-        function fValidarTarjeta() {
+  function fValidarTarjeta()   {
           // Obtiene el tipo de tarjeta seleccionado y el número de tarjeta ingresado
           var opt = $("#lstTipoTarjeta option:selected").val();
           var codigo = $("#nro_tarjeta").val().replace(/-/g, ''); // quita los guiones del número de tarjeta
