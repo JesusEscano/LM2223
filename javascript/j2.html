@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <script src="jquery/jquery-3.6.4.js"></script>
+<script>
+$(function(){
+  $("#oculta").click(function(){
+    $("p:odd").hide();
+    $("h1").hide();
+  });
+});
+$(function(){
+  $("#revela").click(function(){
+    $("p:odd").show();
+    $("h1").show();
+  });
+});
+</script>
+</head>
+<body>
+    <h1>MI PRIMER JQUERY</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla faucibus neque eget massa fermentum commodo. Praesent rutrum arcu tincidunt massa efficitur gravida. Sed rhoncus mauris vitae pellentesque sagittis. Aenean nulla purus, eleifend et leo et, rhoncus rutrum risus. Donec eget metus ac neque interdum laoreet. Fusce turpis quam, rhoncus eu leo ac, consectetur cursus velit. Integer ac risus sed leo egestas dapibus et venenatis ligula. Nullam volutpat magna quis nibh hendrerit iaculi</p>
+    <p>Nulla a tellus eu nulla eleifend semper sed quis elit. Curabitur vitae fermentum felis. Nunc placerat euismod feugiat. Vivamus sit amet nibh in dui egestas tristique sit amet vitae lorem. Curabitur a lacus ac felis gravida porttitor eget vel diam. Maecenas dui turpis, ornare finibus lectus vel, pretium venenatis mi. Maecenas aliquet molestie lacus non mattis. Aenean eleifend condimentum justo congue bibendum. In finibus nulla id neque porta, et auctor ipsum tempus. Integer quis dictum massa. Maecenas elementum libero vitae ipsum faucibus lacinia. Vestibulum a enim diam. Donec fringilla lorem et dapibus faucibus. Morbi malesuada arcu augue, a viverra nisi porta a. Proin consectetur mollis turpis, id malesuada libero commodo at. Nulla quis tincidunt nisi. </p>
+    <p>Curabitur ullamcorper, libero euismod tincidunt lacinia, neque ex porta orci, nec malesuada purus lacus nec sem. Integer semper erat at interdum tincidunt. Pellentesque eu volutpat nisl, non dignissim turpis. Maecenas sodales nibh quis suscipit cursus. Mauris posuere rhoncus nunc, vel tempus enim. In dictum faucibus turpis vel congue. Sed pulvinar, lacus eget fermentum iaculis, dolor tellus laoreet eros, ac vestibulum enim enim at magna. Cras porta nisl vel est mollis lobortis. Pellentesque consectetur eget diam a tincidunt. Etiam ultrices eu nunc pulvinar blandit. </p>
+    <p>In porta velit urna, eu eleifend nisi condimentum in. Ut euismod nibh velit, id faucibus neque eleifend sit amet. Etiam eleifend, erat at tempor sodales, metus lacus ultricies turpis, id tristique urna neque porta quam. Duis pharetra lobortis magna, sed dignissim ipsum lobortis quis. Nulla ullamcorper ante ut lorem commodo, at varius dolor blandit. Nulla sapien metus, vulputate interdum aliquet a, aliquet et tortor. Maecenas sem augue, maximus quis gravida in, efficitur ac metus. Nullam dictum rhoncus leo at accumsan. Donec purus quam, fermentum ac arcu at, ultrices faucibus urna. Maecenas a neque lacus. Ut sollicitudin lobortis dui, eu sodales elit luctus ut. Vestibulum sodales nisi a mauris volutpat, quis suscipit ex efficitur. </p>
+    <p>Integer ac mi id sem posuere imperdiet sed eu sapien. Etiam dui ex, vestibulum quis fringilla sed, vestibulum quis leo. Ut mollis rhoncus justo sit amet accumsan. In mollis varius lacus, vitae pulvinar turpis pulvinar id. Praesent mi elit, hendrerit in porta at, vehicula at neque. Mauris convallis sollicitudin ligula eget viverra. Ut feugiat accumsan justo interdum molestie. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin et felis dictum, facilisis dui ac, semper dui. Vestibulum aliquam tincidunt enim pretium commodo. Sed et aliquet diam. Sed enim est, auctor non venenatis vulputate, condimentum ut odio. Phasellus efficitur egestas lorem, eu blandit leo commodo at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla tempor semper neque, vitae pharetra tortor semper ut. Etiam tincidunt orci eu sem cursus, vitae bibendum purus condimentum. </p>
+    <p>Donec nec est id justo porta aliquam eu nec tellus. Ut eget elit vel mauris ultrices varius id et nisl. Proin venenatis id eros sit amet varius. Nam suscipit quis sem ut congue. Morbi in turpis vitae quam hendrerit vestibulum nec eu augue. Sed posuere elementum neque sed dapibus. Nam molestie semper lectus aliquam commodo. Mauris gravida aliquam purus non venenatis. Donec condimentum nisl a dolor gravida, eget semper nisi placerat. Nulla faucibus faucibus ex nec venenatis. Sed ut egestas elit, tristique mollis odio. Nullam quis efficitur neque. Morbi ac lorem et ligula bibendum accumsan. Morbi ac enim nisl. Praesent et consectetur dui. Sed et risus pharetra, lobortis erat sed, lobortis purus. </p>
+    <button id="oculta">Ocultar</button>
+    <button id="revela">Aparecer</button>
+</body>
+</html>
