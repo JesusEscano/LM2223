@@ -1,34 +1,26 @@
-<!DOCTYPE html>
-<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 6</title>
+    <title>Ejercicio 8</title>
     <script src="jquery/jquery-3.6.4.js"></script>
     <script>
-        $(document).ready(function(){
-            var enc =$(".aqui h1");
-            var ps = $(".aqui p");
-            var img = $(".aqui img");
-            var link = $(".aqui a")
-            document.getElementById("info").innerHTML = 
-               "<table><tr><th>Número de encabezados</th><td>" + enc.length + "</td></tr>"+
-               "<tr><th>Número de párrafos</th><td>" + ps.length +  "</td></tr>"+
-               "<tr><th>Número de imágenes</th><td>" + img.length +  "</td></tr>"+
-               "<tr><th>Número de enlaces</th><td>" + link.length + "</td></tr></table>"
-               ;
-        });
+$(document).ready(function(){
+  $("#btn1").click(function(){
+    alert("SRC: " + $("img").attr("src"));
+  });
+  $("#btn2").click(function(){
+    alert("HTML: " + $("h1").html());
+  });
+  $("#btn3").click(function(){
+    alert("HTML: " + $(".aqui").html());
+  });
+});
     </script>
-    <style>
-        table, th, td {
-  border: 1px solid black;
-}
-    </style>
 </head>
 <body>
+    <h1><b>JQUERY DE CONTAR</b></h1>
     <div class="aqui">
-    <h1>JQUERY DE CONTAR</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla faucibus neque eget massa fermentum commodo. Praesent rutrum arcu tincidunt massa efficitur gravida. Sed rhoncus mauris vitae pellentesque sagittis. Aenean nulla purus, eleifend et leo et, rhoncus rutrum risus. Donec eget metus ac neque interdum laoreet. Fusce turpis quam, rhoncus eu leo ac, consectetur cursus velit. Integer ac risus sed leo egestas dapibus et venenatis ligula. Nullam volutpat magna quis nibh hendrerit iaculi</p>
     <p>Nulla a tellus eu nulla eleifend semper sed quis elit. Curabitur vitae fermentum felis. Nunc placerat euismod feugiat. Vivamus sit amet nibh in dui egestas tristique sit amet vitae lorem. Curabitur a lacus ac felis gravida porttitor eget vel diam. Maecenas dui turpis, ornare finibus lectus vel, pretium venenatis mi. Maecenas aliquet molestie lacus non mattis. Aenean eleifend condimentum justo congue bibendum. In finibus nulla id neque porta, et auctor ipsum tempus. Integer quis dictum massa. Maecenas elementum libero vitae ipsum faucibus lacinia. Vestibulum a enim diam. Donec fringilla lorem et dapibus faucibus. Morbi malesuada arcu augue, a viverra nisi porta a. Proin consectetur mollis turpis, id malesuada libero commodo at. Nulla quis tincidunt nisi. </p>
     <p>Curabitur ullamcorper, libero euismod tincidunt lacinia, neque ex porta orci, nec malesuada purus lacus nec sem. Integer semper erat at interdum tincidunt. Pellentesque eu volutpat nisl, non dignissim turpis. Maecenas sodales nibh quis suscipit cursus. Mauris posuere rhoncus nunc, vel tempus enim. In dictum faucibus turpis vel congue. Sed pulvinar, lacus eget fermentum iaculis, dolor tellus laoreet eros, ac vestibulum enim enim at magna. Cras porta nisl vel est mollis lobortis. Pellentesque consectetur eget diam a tincidunt. Etiam ultrices eu nunc pulvinar blandit. </p>
@@ -39,6 +31,8 @@
     <img src="https://i.imgur.com/V4ePHsH.jpg" alt="RPGs de abril" />
     <img src="https://i.imgur.com/V4ePHsH.jpg" alt="RPGs de abril" />
 </div>
-<p id="info"></p>
+<button id="btn1">Obtener src de la imagen</button>
+<button id="btn2">Obtener html del encabezado</button>
+<button id="btn3">Obtener html de un párrafo</button>
 </body>
 </html>
