@@ -2,27 +2,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 6</title>
+    <title>Ejercicio 7</title>
     <script src="jquery/jquery-3.6.4.js"></script>
     <script>
-        $(document).ready(function(){
-            var enc =$(".aqui h1");
-            var ps = $(".aqui p");
-            var img = $(".aqui img");
-            var link = $(".aqui a")
-            document.getElementById("info").innerHTML = 
-               "<table><tr><th>Número de encabezados</th><td>" + enc.length + "</td></tr>"+
-               "<tr><th>Número de párrafos</th><td>" + ps.length +  "</td></tr>"+
-               "<tr><th>Número de imágenes</th><td>" + img.length +  "</td></tr>"+
-               "<tr><th>Número de enlaces</th><td>" + link.length + "</td></tr></table>"
-               ;
-        });
-    </script>
-    <style>
-        table, th, td {
-  border: 1px solid black;
-}
-    </style>
+$(document).ready(function() {
+  $("#preg").click(function(){
+    const hay = ["h1", "p", "a", "img","div","table","li"];
+
+    function checkElement(cosas) {
+      if ($(cosas).length > 0) {
+        console.log(`El elemento "${cosas}" existe.`);
+      } else {
+        console.log(`El elemento "${cosas}" no existe.`);
+      }
+    }
+
+    hay.forEach(cosas => {
+      checkElement(cosas);
+    });
+  });
+});
+      </script>
 </head>
 <body>
     <div class="aqui">
@@ -37,6 +37,7 @@
     <img src="https://i.imgur.com/V4ePHsH.jpg" alt="RPGs de abril" />
     <img src="https://i.imgur.com/V4ePHsH.jpg" alt="RPGs de abril" />
 </div>
+<button id="preg">Comprueba lo que hay aquí en consola</button>
 <p id="info"></p>
 </body>
 </html>

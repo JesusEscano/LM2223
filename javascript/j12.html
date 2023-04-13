@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12</title>
+    <script src="jquery/jquery-3.6.4.js"></script>
+    <script>
+$(document).ready(function(){
+  $("#cambia").click(function(){
+    $("#texto").toggle();
+  });
+});
+    </script>
+    <style>
+#caja {
+    height:300px; 
+    background-color:blue;
+    color: white;
+    line-height: 250px;  
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+<div id="caja">
+<div id="texto" >Este texto se irá cuando pulses el botón</div></div>
+<button id="cambia">Mostrar/Ocultar Texto</button>
+</body>
+</html>

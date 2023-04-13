@@ -8,13 +8,14 @@
     <script src="jquery/jquery-3.6.4.js"></script>
     <script>
 $(document).ready(function(){
-  $("#comprueba").click(function(){
-    alert($("#Num").val());
+  $("#borra").click(function(){
+    $("#texto").empty();
   });
 });
     </script>
 </head>
 <body>
-    
+<div id="texto" style="height:300px; line-height: 250px; background-color:blue;color: white; text-align: center;">Este texto se irá cuando pulses el botón</div>
+<button id="borra">Borra el texto</button>
 </body>
 </html>
