@@ -15,6 +15,16 @@
     </div>
     <script>
         /* Completar el código jQuery aquí */
+        let http = "http://api.ipstack.com/"
+      $.get("https://jsonip.com/").done(function(e) {
+        let ip = e.ip;
+        let url = http+ip+"?access_key=a97d97e4b86ba531aef2b43215cb8f88";
+      $.get(url).done(function(r) {
+        $("#objetivo").text("Tu dirección IP es " + r.ip + ", tu continente es " +r.continent_name+ ", tu ciudad es " + r.city + " y tu país es " + r.country_name+ ", con bandera "+ r.location.country_flag);
+      }).fail(function() {
+        console.log("Ocurrió un error al conectarnos al servidor");
+      });
+    });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   </body>
