@@ -9,29 +9,29 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
   <body>
-    <h1>Consumiento datos de la API de Google Books</h1>
+    <h1>Consumiento datos de la API de Giphy</h1>
     <p>
-      <label>Libro:</label>
-      <input type="text" name="" id="libro" placeholder="Título del libro">
-      <button id="lib">Buscar</button>
+      <label>Gif:</label>
+      <input type="text" name="" id="gifs" placeholder="Término a buscar">
+      <button id="bot">Buscar</button>
     </p>
     <div id="resultado"></div>
     <script>
         $(document).ready(function(){
-          $('#lib').click(function() {
-            let url = "https://www.googleapis.com/books/v1/volumes?q=intitle:";
-            let api_key = "&key=AIzaSyBO8eGbhtfXcm1Xc-kupdVNtxJM8fiJ--k";
-            let nombre = $("#libro").val();
-            let url_completa = url + nombre +api_key;
+          $('#bot').click(function() {
+            let url = "https://api.giphy.com/v1/gifs/search?api_key=";
+            let api_key = "eACrg18RbfVSvXk4NdzxrQN39PbG64r7";
+            let nombre = $("#gifs").val();
+            let url_completa = url +api_key+"&q="+nombre;
             $.get(url_completa).done(function(respuesta){
               console.log(respuesta)
-              let libros = respuesta.items;
-              let resultado_html = '';
-              libros.forEach(function(libro) {
+             let gifes = respuesta.Object;
+             let resultado_html = '';
+              gifes.forEach(function(giferos) {
           resultado_html += `
             <center>
-              <p><h2>${libro.volumeInfo.title}</h2></p>
-              <p><img src="${libro.volumeInfo.imageLinks.thumbnail}"></p>    
+              <p><h2>${gifero.title}</h2></p>
+              <p><img src="${gifero.images}"></p>    
             </center>
           `;
         });
