@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejercicio 6</title>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<style>
+body {
+  min-width: 520px;
+}
+.column {
+  width: 170px;
+  float: left;
+  padding-bottom: 100px;
+}
+.portlet {
+  margin: 0 1em 1em 0;
+  padding: 0.3em;
+}
+.portlet-header {
+  padding: 0.2em 0.3em;
+  margin-bottom: 0.5em;
+  position: relative;
+  background-color: blue;
+}
+.portlet-toggle {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -8px;
+}
+.portlet-content {
+  padding: 0.4em;
+}
+.portlet-placeholder {
+  border: 1px dotted black;
+  margin: 0 1em 1em 0;
+  height: 50px;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script>
+$( function() {
+  $( ".column" ).sortable({
+    connectWith: ".column",
+    handle: ".portlet-header",
+    cancel: ".portlet-toggle",
+    placeholder: "portlet-placeholder ui-corner-all"
+  });
+
+  $( ".portlet" )
+    .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
+    .find( ".portlet-header" )
+      .addClass( "ui-widget-header ui-corner-all" )
+      .prepend( "<span class='ui-icon ui-icon-minusthick portlet-toggle'></span>");
+
+  $( ".portlet-toggle" ).on( "click", function() {
+    var icon = $( this );
+    icon.toggleClass( "ui-icon-minusthick ui-icon-plusthick" );
+    icon.closest( ".portlet" ).find( ".portlet-content" ).toggle();
+  });
+} );
+</script>
+</head>
+<body>
+
+<div class="column">
+
+<div class="portlet">
+  <div class="portlet-header"></div>
+  <div class="portlet-content">
+    El tonto que me dejaste, pero no estoy triste
+    Salgo de noche hasta tarde y tú solo quieres saber
+    Có-cómo pude borrarte
+    Yo sé que me viste el Gucci que me regalaste
+    Puesto pa' salir con él (con él)</div>
+</div>
+
+<div class="portlet">
+  <div class="portlet-header"></div>
+  <div class="portlet-content">
+    Hoy me levanto en la casa de otro, ni sé dónde estoy
+    Porque anoche me bebí la noche, sabes cómo soy
+    No es que quiera volver
+    Porque todo' ya saben que tú, fuiste tú, fuiste</div>
+</div>
+
+<div class="portlet">
+    <div class="portlet-header"></div>
+    <div class="portlet-content">
+        Para-para-para no pensarte
+        Cuento botella', no cuento amante'
+        Bailando reggaetone' de ante'
+        Con toa' mis nena'
+        Sigo en el ring, gané este combate
+        Dice' que no, yo sé que lloraste
+        Tú, fuiste tú, fuiste</div>
+  </div>
+
+</div>
+
+<div class="column">
+
+<div class="portlet">
+  <div class="portlet-header"></div>
+  <div class="portlet-content">
+    El tonto que me dejaste, pero no estoy triste
+    Salgo de noche hasta tarde y tú solo quieres saber
+    Có-cómo pude borrarte
+    Yo sé que me viste el Gucci que me regalaste
+    Puesto pa' salir con él (con él), eh</div>
+</div>
+<div class="portlet-header"></div>
+<div class="portlet-content">
+    El tonto que la dejaste, pero no está triste
+    Sale de noche hasta tarde y tú solo quieres saber
+    Cómo pudo borrarte
+    Yo sé que la viste el Gucci que le regalaste
+    Puesto pa' salir conmigo, bebé (ay)</div>
+</div>
+</div>
+
+<div class="column">
+
+<div class="portlet">
+  <div class="portlet-header"></div>
+  <div class="portlet-content">
+    Era aquella niña de la escuela
+    Pero eso le dejó secuela'
+    Ahora a cada VIP del party ella se cuela
+    Gafas Gucci, vestida de lentejuela'
+    Nos vemo' y nos comemo' sin cautela
+    Y ahora e' una niña mala que anda en busca de calor
+    Y aunque la dejaste, ese culito no pierde valor
+    A todos deja en visto (visto)
+    Bebé, lo siento, hace tiempo que no te había visto
+    No quiero presionar, pero insisto
+    Que yo me enamoré de tus grito'
+    De las fotos que subes sin filtro
+    Y cómo perrea' en la disco (en la disco)
+    Te tapo los ojo' como el big boss</div>
+</div>
+
+<div class="portlet">
+  <div class="portlet-header"></div>
+  <div class="portlet-content">
+    Y empiezo a hacerte cosas que a ti nunca te han hecho
+    Esta noche vas a tocar el techo
+    Y dale, ma, vamo' a darle como e' (como e', yeah)
+    Y recuerda que ese bobo solo es</div>
+</div>
+<div class="portlet">
+    <div class="portlet-header"></div>
+    <div class="portlet-content">
+        El tonto que me dejaste (fuiste tú, fuiste)
+        El tonto que la dejaste (vuelve, eh-eh, yeah)
+        ¿Cómo pude borrarte?
+        Yo sé que me viste el Gucci que me regalaste
+        Puesto pa' salir con él (eah)
+        El tonto que la dejaste, pero no está triste
+        Sale de noche hasta tarde y tú solo quieres saber
+        ¿Cómo pude borrarte?
+        Yo sé que me viste el Gucci que me regalaste
+        Puesto pa' salir con él (eh-eh)</div>
+  </div>
+</div>
+
+
+</body>
+</html>

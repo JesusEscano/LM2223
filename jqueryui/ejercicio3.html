@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejercicio 3</title>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script>
+  $( function() {
+    $( "#dialog" ).dialog({
+      autoOpen: false,
+      closeText: "Haz lo que debes",
+      show: {
+        effect: "blind",
+        duration: 1000
+      },
+      hide: {
+        effect: "explode",
+        duration: 1000
+      }
+    });
+ 
+    $( "#opener" ).on( "click", function() {
+      $( "#dialog" ).dialog( "open" );
+    });
+  } );
+  </script>
+</head>
+<body>
+ 
+<div id="dialog" title="ola k ase">
+  <p>El tonto que la dejaste, pero no está triste
+    Sale de noche hasta tarde y tú solo quieres saber
+    Cómo pudo borrarte
+    Yo sé que la viste el Gucci que le regalaste
+    Puesto pa' salir conmigo, bebé (ay).
+    &apos;&apos;</p>
+</div>
+ 
+<button id="opener">Abre esto, niño</button>
+ 
+ 
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejercicio 9</title>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<style>
+label {
+  display: inline-block; width: 10em;
+}
+fieldset div {
+margin-bottom: 2em;
+}
+fieldset .help {
+  display: inline-block;
+}
+.ui-tooltip {
+  width: 210px;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script>
+$( function() {
+  var tooltips = $( "[title]" ).tooltip({
+    position: {
+      my: "left top",
+      at: "right+5 top-5",
+      collision: "none"
+    }
+  });
+  var tooltipEnabled = false;
+  $( "<button>" )
+    .text( "Mostrar la ayuda" )
+    .button()
+    .on( "click", function() {
+      tooltipEnabled =!tooltipEnabled;
+      if (tooltipEnabled) {
+        tooltips.tooltip("open");
+      } else {
+        tooltips.tooltip("close");
+      }
+    })
+    .insertAfter( "form" );
+} );
+</script>
+</head>
+<body>
+
+<form>
+<fieldset>
+  <div>
+    <label for="Nombre">Nombre</label>
+    <input id="Nombre" name="Nombre" title="Introduzca su nombre.">
+  </div>
+  <div>
+    <label for="Apellidos">Apellidos</label>
+    <input id="Apellidos" name="Apellidos" title="Introduzca sus apellidos.">
+  </div>
+  <div>
+    <label for="DNI">DNI</label>
+    <input id="DNI" name="DNI" title="Agregue su DNI -sin letra-.">
+  </div>
+  <div>
+    <label for="Correo electrónico">Correo electrónico</label>
+    <input id="Correo electrónico" name="Correo electrónico" title="Ponga su correo electrónico.">
+  </div>
+  <div>
+    <label for="Contraseña">Contraseña</label>
+    <input id="Contraseña" name="Contraseña" title="Introduzca su contraseña.">
+  </div>
+</fieldset>
+</form>
+
+
+</body>
+</html>

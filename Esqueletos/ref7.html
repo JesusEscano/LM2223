@@ -25,13 +25,13 @@
             let url_completa = url +api_key+"&q="+nombre;
             $.get(url_completa).done(function(respuesta){
               console.log(respuesta)
-             let gifes = respuesta.Object;
+             let gifes = respuesta.data;
              let resultado_html = '';
-              gifes.forEach(function(giferos) {
+              gifes.forEach(function(gifero) {
           resultado_html += `
             <center>
               <p><h2>${gifero.title}</h2></p>
-              <p><img src="${gifero.images}"></p>    
+              <p><img src="${gifero.images.original.url}"></p>    
             </center>
           `;
         });

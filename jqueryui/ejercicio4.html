@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejercicio 4</title>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script>
+     $( function() {
+    $( "#dialog-confirm" ).dialog({
+      resizable: false,
+      height: "auto",
+      width: 400,
+      modal: true,
+      closeText: "Elige",
+      buttons: {
+        "¡Jesús Cristo!": function() {
+          $( this ).dialog( "close" );
+          document.getElementById('latin').innerHTML = '';
+        },
+        "¿Quién?": function() {
+          $( this ).dialog( "close" );
+          document.getElementById('latin').innerHTML = '<p id="latin">Skippy es el mensajero de Dios y TÚ eres el mensajero del mensajero.</p>';
+        }
+      }
+    });
+  } );
+  </script>
+</head>
+<body>
+ 
+<div id="dialog-confirm" title="¿Qué quieres hacer?">
+  <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>¡¿Quién es el mensajero de Dios?!</p>
+</div>
+ 
+<p id="latin">Muy pronto viene el fin de la cosa
+    ¡Estamos en apoclipsis, estamos en apoclipsis!
+    ¡Muy pronto va a venir Dios, va a venir Cristo y va a pegar a la tierra!
+    Como nunca visto en tu vida.
+    
+    ¡El día del juicio está acercando!</p>
+ 
+ 
+</body>
+</html>
