@@ -27,6 +27,7 @@
           let año = $("#año").val();
           let url_completa = url + api_key + "&t=" + titulo + "&y=" + año;
           $.get(url_completa).done(function(respuesta){
+            console.log(respuesta);
             $("#resultado").html(' \
               <h2>' + respuesta.Title + '</h2> \
               <img src="' + respuesta.Poster + '"> \
