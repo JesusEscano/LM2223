@@ -102,20 +102,19 @@
         });
         $('#btn-todos').click(function() {
           let url = "https://fakestoreapi.com/products/";
-          let cod = $("#codProducto").val();
-          let url_completa = url + cod;
-          $.get(url_completa).done(function(respuesta){
+          $.get(url).done(function(respuesta){
             console.log(respuesta);
-              let cod = respuesta.data;
+              let cod = respuesta;
               let resultado_html = '';
-              cod.forEach(function(co) {
+              cod.forEach(function(pro) {
           resultado_html += `
-          <center><img src="${co.image}">
-                <p><h2>"${co.title}"</h2></p>
-                <p>"${co.description}"</p>
-                <p>"${co.price}" €</p>
+          <center><img src="${pro.image}">
+                <p><h2>"${pro.title}"</h2></p>
+                <p>"${pro.description}"</p>
+                <p>"${pro.price}" €</p>
                 </center>
                 `});
+                $('#resultados').html(resultado_html);
           }).fail(function(){
             document.getElementById("resultados").innerHTML = "Ha existido un error para cargar la página"
           });
@@ -124,3 +123,4 @@
 </body>
 
 </html>
+
