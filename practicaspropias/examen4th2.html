@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alexandria">
     <title>Visualizador libros</title>
     <!-- Aquí añadimos el código para poder trabajar con jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
     <style>
         body {
             font-family: 'Alexandria', sans-serif;
@@ -71,45 +74,47 @@
     </div>
     <script>
     $('#btn-libro').click(function() {
-          let url = "https://gutendex.com/books";
-          let cod = $("#codlibro").val();
+          let url = "https://gutendex.com/books/";
+          let cod = $("#codLibro").val();
           let url_completa = url + cod;
-          $.get(url_completa).done(function(respuesta){
-            console.log(respuesta);
-            $("#resultados").html(`
-                <center>
-                <p><h2>"${respuesta.results.title}"</h2></p>
-                <p>"${respuesta.results.authors.name}"</p>
-                <img src="${respuesta.results.formats.image/jpeg}">
-                <p> <a href="${respuesta.results.formats.text/plain}">Descargar en .txt</a></p>
-                <p>"${respuesta.results.download_count}" descargas</p>
-                </center>
-                `);
+          $.get(url_completa).done(function (respuesta) {
+                    console.log(respuesta);
+$.get(url_completa).done(function(respuesta){
+console.log(respuesta);
+$("#resultados").empty();
+$("#resultados").html(`
+<center>
+          <p><h2>"${respuesta.title}"</h2></p>
+          <p>${respuesta.authors[0].name}</p>
+          <img src="${respuesta.formats['image/jpeg']}">
+          <p> <a href="${respuesta.formats['text/plain']}">Descargar en .txt</a></p>
+          <p>${respuesta.download_count} descargas</p>
+        </center>
+ `);
           }).fail(function(){
             document.getElementById("resultados").innerHTML = "Ha existido un error para cargar la página"
           });
-        });
-
+        });});
 
         $('#btn-todos').click(function() {
-          let url = "https://gutendex.com/books";
+        let url = "https://gutendex.com/books/";
           $.get(url).done(function(respuesta){
             console.log(respuesta);
-              let cod = respuesta;
               let resultado_html = '';
-              cod.forEach(function(pro) {
+              respuesta.results.forEach(function(pro) {
           resultado_html += `
-          <center><img src="${pro.image}">
-                <p><h2>"${pro.title}"</h2></p>
-                <p>"${pro.description}"</p>
-                <p>"${pro.price}" €</p>
-                </center>
+          <center>
+          <p><h2>"${pro.title}"</h2></p>
+          <p>${pro.authors[0].name}</p>
+          <img src="${pro.formats['image/jpeg']}">
+          <p> <a href="${pro.formats['text/plain']}">Descargar en .txt</a></p>
+          <p>${pro.download_count} descargas</p>
+        </center>
                 `});
                 $('#resultados').html(resultado_html);
           }).fail(function(){
             document.getElementById("resultados").innerHTML = "Ha existido un error para cargar la página"
-          });
-        });
+          });});
     </script>
 </body>
 </html>
