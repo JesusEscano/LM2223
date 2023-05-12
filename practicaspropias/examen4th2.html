@@ -75,6 +75,7 @@
           let cod = $("#codlibro").val();
           let url_completa = url + cod;
           $.get(url_completa).done(function(respuesta){
+            console.log(respuesta);
             $("#resultados").html(`
                 <center>
                 <p><h2>"${respuesta.results.title}"</h2></p>
