@@ -140,22 +140,22 @@ $('#reserva').click(function() {
 }
     var fecha = document.getElementById("fecha").value 
     var horas = {
-  "1": {"hora": "9:00 - 10:00", "precio": 10},
-  "2": {"hora": "10:00 - 11:00", "precio": 10},
-  "3": {"hora": "11:00 - 12:00", "precio": 10},
-  "4": {"hora": "12:00 - 13:00", "precio": 10},
-  "5": {"hora": "13:00 - 14:00", "precio": 12},
-  "6": {"hora": "14:00 - 15:00", "precio": 12},
-  "7": {"hora": "18:00 - 19:00", "precio": 16},
-  "8": {"hora": "19:00 - 20:00", "precio": 16},
-  "9": {"hora": "20:00 - 21:00", "precio": 16}
+  "1": {"hora": "9:00 a 10:00", "precio": 10},
+  "2": {"hora": "10:00 a 11:00", "precio": 10},
+  "3": {"hora": "11:00 a 12:00", "precio": 10},
+  "4": {"hora": "12:00 a 13:00", "precio": 10},
+  "5": {"hora": "13:00 a 14:00", "precio": 12},
+  "6": {"hora": "14:00 a 15:00", "precio": 12},
+  "7": {"hora": "18:00 a 19:00", "precio": 16},
+  "8": {"hora": "19:00 a 20:00", "precio": 16},
+  "9": {"hora": "20:00 a 21:00", "precio": 16}
 };
 var horav = document.getElementById("hora").value;
 var hora = horas[horav]["hora"];
 var precio = horas[horav]["precio"];
 var luzp = luz();
 var total = precio+luzp;
-    document.getElementById("diaReserva").innerHTML = 'Ha reservado para el día '+fecha+' a las '+hora;
+    document.getElementById("diaReserva").innerHTML = 'Ha reservado para el día '+fecha+' de '+hora;
     document.getElementById("totalPrecio").innerHTML = 'Deberá abonar: '+total+ '€';
           })
     </script>
