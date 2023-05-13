@@ -96,7 +96,7 @@ $(document).ready(function() {
           'Para cambiar de mes, clic en los extremos superiores del calendario'
     });
 });
-  $( "#f_entrada" ).datepicker({ minDate: +0, maxDate: "+1Y", regional: "es" });
+  $( "#f_entrada" ).datepicker({ minDate: +0, maxDate: "+1Y", regional: "es",  onSelect: function(selectedDate) {$( "#f_salida" ).datepicker( "option", "minDate", selectedDate );} });
   $( "#f_salida" ).datepicker({ minDate: +0, maxDate: "+1Y", regional: "es" });
 } );
 
@@ -121,6 +121,7 @@ console.log(ind);
 console.log(diffDays);
 var precio = diffDays*((ind*25)+(dob*45)+(tri*80));
 document.getElementById("totalPrecio").innerHTML = 'Precio: '+precio+' €';
+
 });
 
     </script>
