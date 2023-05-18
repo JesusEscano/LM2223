@@ -22,13 +22,13 @@
     $( "#prod" ).autocomplete({
       source: function(request, response) {
         $.ajax({
-          url: "https://fakestoreapi.com/products",
+          url: "https://gutendex.com/books",
           dataType: "json",
           data: {
             search: request.term
           },
           success: function(data) {
-            response(data.map(function(item) {
+            response(data.results.map(function(item) {
               return {
                 label: item.title,
                 value: item.title,

@@ -96,7 +96,10 @@ $(document).ready(function() {
           'Para cambiar de mes, clic en los extremos superiores del calendario'
     });
 });
-  $( "#f_entrada" ).datepicker({ minDate: 1, maxDate: "+1Y", regional: "es",  onSelect: function(selectedDate) {$( "#f_salida" ).datepicker( "option", "minDate", selectedDate );} });
+  $( "#f_entrada" ).datepicker({ minDate: 1, maxDate: "+1Y", regional: "es",  
+  onSelect: function(selectedDate) {var fechab = $(this).datepicker("getDate");
+    fechab.setDate(fechab.getDate() + 1);
+    $( "#f_salida" ).datepicker("option", "minDate", fechab);} });
   $( "#f_salida" ).datepicker({ minDate: 1, maxDate: "+1Y", regional: "es" });
 } );
 
