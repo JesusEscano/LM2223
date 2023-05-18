@@ -84,6 +84,7 @@ $("#resultados").html(`
 <center>
           <p><h2>"${respuesta.title}"</h2></p>
           <p>${respuesta.authors[0].name}</p>
+          <p>Fecha de nacimiento: ${respuesta.authors[0].birth_year}</p>
           <img src="${respuesta.formats['image/jpeg']}">
           <p> <a href="${respuesta.formats['text/plain']}">Descargar en .txt</a></p>
           <p>${respuesta.download_count} descargas</p>
