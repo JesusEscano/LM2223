@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https:/resources/demos/style.css">
+    <style>
+        .li{list-style:default}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+         $( function() {
+        $( "#dialog-confirm" ).dialog({
+          resizable: false,
+          height: "auto",
+          width: 600,
+          modal: true,
+          closeText: "Cierra",
+          buttons: {
+            "Eliminar todos los archivos": function() {
+              $( this ).dialog( "close" );
+              document.getElementById("orden").innerHTML = '';
+            },
+            "Cancelar": function() {
+              $( this ).dialog( "close" );
+;
+            }
+          }
+        });
+      } );
+      </script>
+    </head>
+    <body>
+     
+    <div id="dialog-confirm" title="Vaciar papelera">
+      <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Estos elementos serán eliminados y no podrá recuperarlos. ¿Está seguro?</p>
+    </div>
+     <h1>Ficheros de sistema:</h1>
+     <ul id="orden">
+    <li>Fichero 1</li>
+    <li>Fichero 2</li>
+    <li>Fichero 3</li>
+    <li>Fichero 4</li>
+    <li>Fichero 5</li>
+</ul>
+     
+    </body>
+    </html>

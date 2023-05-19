@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios aleatorios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <!-- Aquí deberíamos enlazar a jQuery (usa URL alojada en Internet)-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <style>
+        body {
+            background-color: rgb(240, 239, 239);
+        }
+
+        #flex {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .circle {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='container'>
+        <div id='flex' class='card'>
+            <div class="card-header">
+                <h3 class="card-title">Generador de usuarios</h3>
+            </div>
+            <div class="card-body">
+                <div class='usuario'>
+                    <img src='' class='circle'>
+                    <p class='fullname'></p>
+                    <p class='username'></p>
+                    <p class='email'></p>
+                    <p class='city'></p>
+                    <div class="card-footer">
+                        <button id="btn-generico" class='btn btn-primary'>Genérico</button>
+                        <button id="btn-espanol" class='btn btn-primary'>Español</button>
+                        <button id="btn-varios" class='btn btn-primary'>5 Españoles</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        /* Aquí deberías escribir tu código de jQuery */
+        $('#btn-generico').click(function() {
+          $.ajax({
+  url: 'https://randomuser.me/api/',
+  dataType: 'json',
+  success: function(data) {
+    console.log(data.results);
+    console.log(data.results[0].email);
+    console.log(data.results[0].location['city']);
+$(".circle", ".fullname", ".username", ".email", ".city").empty();
+$(".circle").html(`<img src="${data.results[0].picture['thumbnail']}">`)
+$(".fullname").html(`<p class='fullname'>${data.results[0].name.first} ${data.results[0].name.last}</p>`)
+$(".username").html(`<p class='username'>${data.results[0].login['username']}</p>`)
+$(".email").html(`<p class='email'>${data.results[0].email}</p>`)
+$(".city").html(`<p class='city'>${data.results[0].location['city']}</p>`)
+  }
+}).fail(function(){
+            document.getElementsByClassName("usuario").innerHTML = "Ha existido un error para cargar la página"
+          });
+});
+ 
+        $('#btn-espanol').click(function() {
+            $.ajax({
+  url: 'https://randomuser.me/api/?nat=es',
+  dataType: 'json',
+  success: function(data) {
+    console.log(data.results);
+    console.log(data.results[0].email);
+    console.log(data.results[0].location['city']);
+$(".circle", ".fullname", ".username", ".email", ".city").empty();
+$(".circle").attr(`src="${data.results[0].picture['thumbnail']}" class='circle'>`)
+$(".fullname").html(`<p class='fullname'>${data.results[0].name.first} ${data.results[0].name.last}</p>`)
+$(".username").html(`<p class='username'>${data.results[0].login['username']}</p>`)
+$(".email").html(`<p class='email'>${data.results[0].email}</p>`)
+$(".city").html(`<p class='city'>${data.results[0].location['city']}</p>`)
+  }
+}).fail(function(){
+            document.getElementsByClassName("usuario").innerHTML = "Ha existido un error para cargar la página"
+          });
+});
+
+
+$('#btn-varios').click(function() {
+            $.ajax({
+  url: 'https://randomuser.me/api/?results=5',
+  dataType: 'json',
+  success: function(data) {
+    console.log(data.results);
+    console.log(data.results[0].email);
+    console.log(data.results[0].location['city']);
+    data.results[0].forEach(function(pro){
+        pro=+
+$(".circle", ".fullname", ".username", ".email", ".city").empty();
+$(".circle").attr(`src="${pro.picture['thumbnail']}" class='circle'>`)
+$(".fullname").html(`<p class='fullname'>${pro.name.first} ${pro.name.last}</p>`)
+$(".username").html(`<p class='username'>${pro.login['username']}</p>`)
+$(".email").html(`<p class='email'>${pro.email}</p>`)
+$(".city").html(`<p class='city'>${pro.location['city']}</p>`)}
+      )  }
+}).fail(function(){
+            document.getElementsByClassName("usuario").innerHTML = "Ha existido un error para cargar la página"
+});
+});
+    </script>
+</body>
+
+</html>
