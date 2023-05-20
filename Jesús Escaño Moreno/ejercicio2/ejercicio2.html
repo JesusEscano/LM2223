@@ -59,12 +59,12 @@
     console.log(data.results);
     console.log(data.results[0].email);
     console.log(data.results[0].location['city']);
-$(".circle", ".fullname", ".username", ".email", ".city").empty();
-$(".circle").html(`<img src="${data.results[0].picture['thumbnail']}">`)
-$(".fullname").html(`<p class='fullname'>${data.results[0].name.first} ${data.results[0].name.last}</p>`)
-$(".username").html(`<p class='username'>${data.results[0].login['username']}</p>`)
-$(".email").html(`<p class='email'>${data.results[0].email}</p>`)
-$(".city").html(`<p class='city'>${data.results[0].location['city']}</p>`)
+    $(".circle, .fullname, .username, .email, .city").empty();
+    $(".circle").attr("src", data.results[0].picture.thumbnail);
+            $(".fullname").html(`<p class="fullname">${data.results[0].name.first} ${data.results[0].name.last}</p>`);
+            $(".username").html(`<p class="username">${data.results[0].login.username}</p>`);
+            $(".email").html(`<p class="email">${data.results[0].email}</p>`);
+            $(".city").html(`<p class="city">${data.results[0].location.city}</p>`);
   }
 }).fail(function(){
             document.getElementsByClassName("usuario").innerHTML = "Ha existido un error para cargar la página"
@@ -80,7 +80,7 @@ $(".city").html(`<p class='city'>${data.results[0].location['city']}</p>`)
     console.log(data.results[0].email);
     console.log(data.results[0].location['city']);
 $(".circle", ".fullname", ".username", ".email", ".city").empty();
-$(".circle").attr(`src="${data.results[0].picture['thumbnail']}" class='circle'>`)
+$(".circle").attr("src", data.results[0].picture.thumbnail);
 $(".fullname").html(`<p class='fullname'>${data.results[0].name.first} ${data.results[0].name.last}</p>`)
 $(".username").html(`<p class='username'>${data.results[0].login['username']}</p>`)
 $(".email").html(`<p class='email'>${data.results[0].email}</p>`)
@@ -93,23 +93,26 @@ $(".city").html(`<p class='city'>${data.results[0].location['city']}</p>`)
 
 
 $('#btn-varios').click(function() {
-            $.ajax({
-  url: 'https://randomuser.me/api/?results=5',
-  dataType: 'json',
-  success: function(data) {
-    console.log(data.results);
-    console.log(data.results[0].email);
-    console.log(data.results[0].location['city']);
-    data.results[0].forEach(function(pro){
-        pro=+
-$(".circle", ".fullname", ".username", ".email", ".city").empty();
-$(".circle").attr(`src="${pro.picture['thumbnail']}" class='circle'>`)
-$(".fullname").html(`<p class='fullname'>${pro.name.first} ${pro.name.last}</p>`)
-$(".username").html(`<p class='username'>${pro.login['username']}</p>`)
-$(".email").html(`<p class='email'>${pro.email}</p>`)
-$(".city").html(`<p class='city'>${pro.location['city']}</p>`)}
-      )  }
-}).fail(function(){
+  $.ajax({
+    url: 'https://randomuser.me/api/?results=5',
+    dataType: 'json',
+    success: function(data) {
+      console.log(data.results);
+      console.log(data.results[0].email);
+      console.log(data.results[0].location['city']);
+
+      $(".circle, .fullname, .username, .email, .city").empty();
+
+      data.results.forEach(function(pro) {
+        var $nuevo = $("<div>").addClass("nuevo");
+        $nuevo.append(`<p class="fullname">${pro.name.first} ${pro.name.last}</p>`);
+        $nuevo.append(`<p class="username">${pro.login.username}</p>`);
+        $nuevo.append(`<p class="email">${pro.email}</p>`);
+        $nuevo.append(`<p class="city">${pro.location.city}</p>`);
+
+        $(".circle, .fullname, .username, .email, .city").append($nuevo);
+      });
+    }}).fail(function(){
             document.getElementsByClassName("usuario").innerHTML = "Ha existido un error para cargar la página"
 });
 });
