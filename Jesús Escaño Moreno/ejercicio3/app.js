@@ -30,18 +30,18 @@ appendText:
   'Para cambiar de mes, clic en los extremos superiores del calendario'
 });
 });
-$( "#ida" ).datepicker({ minDate: 1, maxDate: "+1Y", regional: "es",  
+$( "#ida" ).datepicker({ minDate: 1, maxDate: "+1M", regional: "es",  
 onSelect: function(selectedDate) {var fechab = $(this).datepicker("getDate");
 fechab.setDate(fechab.getDate());
 $( "#vuelta" ).datepicker("option", "minDate", fechab);} });
 $( "#vuelta" ).datepicker({ minDate: 1, maxDate: "", regional: "es" });
 } );
-var checkBox = document.getElementById("idayvuelta");
-  if (checkBox.checked == true){
-    return 4;
-  } else {
-    return 0;
-  }
+//var checkBox = document.getElementById("idayvuelta");
+//  if (checkBox.checked == true){
+//    return 4;
+//  } else {
+//    return 0;
+//  }
 
 $("form").submit(function(e){
 e.preventDefault();
