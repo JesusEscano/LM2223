@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+ 
+
+.header {
+  font-size: 0;
+  vertical-align: top;
+  
+}
+
+img {
+  border:#017efc solid 3px;
+}
+
+.noborde img {
+border: 0px;
+  }
+  
+  /* Ese cuerpo */
+  .body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1;
+  }
+  
+
+  
+  /* Top Nav bar */
+  .navbar {
+    display: flex;
+    background-color: #25517c;
+    flex-flow: row-reverse;
+  }
+  
+  /* Enlaces de la navbar */
+  .navbar a {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    color: white;
+    padding: 14px 10px;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  /* Color en hover */
+  .navbar a:hover {
+    background-color: #046ad1;
+    color: black;
+  }
+  
+  /* Column container */
+  .row {  
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* Columna peque */
+  .main {
+    flex: 30%;
+    background-color: #aaa;
+    padding: 20px;
+    font-size: 25px;
+    vertical-align: top;
+    text-align: center;
+    color:black;
+  }
+  .entrc {
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding-bottom: 5px;
+  }
+  
+  /* Columna grande */
+  .side {
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
+  }
+
+  
+
+  /* Footer */
+  .footer {
+    padding: 20px;
+    color: white;
+    text-align: center;
+    background: black;
+  }
+
+.texto {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
+    padding: 5px;
+    text-align: justify;
+}
+
+  
+  /* Responsive layout */
+  @media screen and (max-width: 700px) {
+    .row, .navbar {   
+      flex-direction: column;
+    }
+  }

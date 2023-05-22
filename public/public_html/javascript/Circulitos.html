@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circulitos Javascript</title>
+    <style>
+
+.cajas {
+    display: flex;
+            flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: row;
+  align-content:space-between;
+}
+
+.rojo {  width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin:5px;
+    background: red; }
+.verde {  width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin:5px;
+    background: green; }
+.azul {  width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin:5px;
+    background: blue; }
+
+.botones {
+    display: flex;
+            flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: row;
+  align-content:space-between;
+}
+.botonesc {
+    display: flex;
+            flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: row;
+  align-content:space-between;
+}
+
+.b1 {
+    margin-top: 5px;
+    margin-left: 75px;
+}
+.b2 {
+    margin-top: 5px;
+    margin-left:150px;
+}
+.b3 {
+    margin-top: 5px;
+    margin-left:150px;
+}
+.b4 {
+    margin-top: 5px;
+    margin-left: 68px;
+
+}
+.b5 {
+    margin-top: 5px;
+    margin-left:135px;
+
+}
+.b6 {
+    margin-top: 5px;
+    margin-left:135px;
+
+}
+    </style>
+    <script src="circulos.js"></script>
+</head>
+<body>
+    <div class="cajas">
+        <div  class="rojo"></div>
+        <div  class="verde"></div>
+        <div  class="azul"></div>
+    </div>
+    <div class="botones">
+    <div class="b1"> <button type="bo1" onclick="redondo('b1')">Apagar</button> </div>
+    <div class="b2"> <button type="bo2" onclick="redondo('b2')">Apagar</button> </div>
+    <div class="b3"> <button type="bo3" onclick="redondo('b3')">Apagar</button> </div>
+    </div>
+    <div class="botonesc">
+        <div class="b4"> <button onclick="recupera('rojo','red')">Encender</button> </div>
+        <div class="b5"> <button onclick="recupera('verde','green')">Encender</button> </div>
+        <div class="b6"> <button onclick="recupera('azul','blue')">Encender</button> </div>
+    </div>
+    <div class="botones">
+        <div class="b4"> <button onclick="cambia('rojo','red')">Cambiar</button> </div>
+        <div class="b5"> <button onclick="cambia('verde','green')">Cambiar</button> </div>
+        <div class="b6"> <button onclick="cambia('azul','blue')">Cambiar</button> </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flexbox 7</title>
+    <style>
+            .html, body {
+        height: 100vh;
+        margin:0;
+        padding:0;
+      }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+  background-color: white;
+justify-content: center;
+align-content: center;
+width: 100%;
+height: 100vh;
+}
+
+.flex-container > div {
+  color: white;
+  width: 33.3%;
+  height: fit-content;
+ ;
+  text-align: center;
+  font-size: 100px;}
+
+.flexbox-equalise:nth-child(1) { background-color: #1abc9c;  }
+.flexbox-equalise:nth-child(2) { background: #3498db; }
+.flexbox-equalise:nth-child(3) { background: #9b59b6;}
+.flexbox-equalise:nth-child(4) { background: #34495e; }
+.flexbox-equalise:nth-child(5) { background: #f1c40f;  }
+.flexbox-equalise:nth-child(6) { background: #e67e22;  }
+.flexbox-equalise:nth-child(7) { background: #e74c3c; }
+.flexbox-equalise:nth-child(8) { background: #bdc3c7; }
+.flexbox-equalise:nth-child(9) { background: #2ecc71;  }
+.flexbox-equalise:nth-child(10) { background: #16a085; }
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+   <div class="flexbox-equalise">1</div>
+   <div class="flexbox-equalise">2</div>
+   <div class="flexbox-equalise">3</div>
+   <div class="flexbox-equalise">4</div>
+   <div class="flexbox-equalise">5</div>
+   <div class="flexbox-equalise">6</div>
+   <div class="flexbox-equalise">7</div>
+   <div class="flexbox-equalise">8</div>
+   <div class="flexbox-equalise">9</div>
+   <div class="flexbox-equalise">10</div>
+  </div>
+</body>
+</html>

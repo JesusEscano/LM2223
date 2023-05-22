@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotelia</title>
+</head>
+<body>
+    <p>Indique las personas:</p>
+  <p><input id="Adultos" type="number" placeholder="Adultos:"></p>
+  <p><input id="Niños" type="number" placeholder="Niños:"></p>
+  <button id="boton" onclick="comprobación()">Comprobar</button>
+  <p id="resultado"></p>
+  <p id="familiares"></p>
+  <p id="supletoria"></p>
+  <script>
+function comprobación() {
+document.getElementById("resultado").innerHTML="";
+var Adultos=parseInt(document.getElementById("Adultos").value);
+var Niños=parseInt(document.getElementById("Niños").value);
+var Personas=Adultos+Niños;
+var fami=0
+var suple=0
+for (var i=0;Niños>i;i++) {
+if (Niños>1 && Adultos!=1 && Adultos!="" && i%2==0 && Adultos>=Niños)
+{fami=Math.trunc(Niños/2);
+Niños=Niños-(fami*2);
+Adultos=Adultos-(fami*2)}
+if (Niños>1 && Adultos!=1 && Adultos!="" && i%2!=0 && Adultos>=Niños)
+{fami=Math.trunc((i/2));
+Niños-(fami*2);
+Adultos-(fami*2)}}
+if (fami=0){habit= "habitaciones familiares."}
+if (fami=1){habit= "habitación familiar."}
+if (fami>1){habit= "habitaciones familiares."}
+if (Niños=1 && Adultos!=1 && Adultos!="")
+{suple=1;
+Niños-1;
+Adultos-(suple*2)}
+//if (Niños>=1 && Adultos!=1)
+//if (Adultos%3==0)
+//{(Adultos/3)}
+//if (Adultos%Niños==1 && Adultos!=1 && Adultos!=0)
+//{(Niños/2)}
+//if (Adultos == 2*Niños)
+//{Niños}
+if (Adultos == "" || Niños>Adultos || Adultos==1 && Niños==1)
+{document.getElementById("resultado").innerHTML = "Lo sentimos, no disponemos de habitaciones para esa combinación"}
+if (Adultos=="" && Niños=="")
+{document.getElementById("resultado").innerHTML = ""
+document.getElementById("familiares").innerHTML = ""
+document.getElementById("supletoria").innerHTML = ""
+}
+
+{document.getElementById("resultado").innerHTML = "Necesita:"}
+{document.getElementById("familiares").innerHTML = fami+" "+habit}
+{document.getElementById("supletoria").innerHTML = suple+" habitación supletoria."}
+}
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divisores</title>
+</head>
+<body>
+    <h2>Obtén los divisores del número elegido</h2>
+    <input type="text" name="" id="numero">
+<button onclick="comprobacion()">Escribe</button>
+<p id="resultado"></p>
+    <script>
+        function comprobacion(){
+            document.getElementById("resultado").innerHTML="";
+var entrada=parseInt(document.getElementById("numero").value);
+    for (var i=1;entrada>=i;i++) {
+        if(entrada % i == 0){
+    document.getElementById("resultado").innerHTML = document.getElementById("resultado").innerHTML + entrada/i +"<br>";
+    }
+  }
+}
+    </script>
+</body>
+</html>

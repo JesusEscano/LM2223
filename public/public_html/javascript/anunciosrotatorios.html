@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam</title>
+</head>
+<body onload="cambiar(), imgf()">
+    <h2>Anuncios rotatorios</h2>
+    <a href="" id="enlace" target="_blank"><img src=""  id="orden" onclick="entra()"></a>
+    <script>
+           var imagen = document.querySelector('.orden')
+           var link = document.querySelector('.enlace')
+              var imagenes = ['img/banner0.png', 'img/banner1.png', 'img/banner2.png', 'img/banner3.png', 'img/banner4.png', 'img/banner5.png']
+              var enlaces = ['https://store.dsautomobiles.es/configurable', 'https://www.elcorteingles.es/supermercado/', 'https://www.elcorteingles.es/daitsu/electrodomesticos/aire-acondicionado/', 'https://www.madridhifi.com', 'https://launidad.movistarplus.es/?dis_c=331187589&dclid=CL-Lt9zx4_YCFdZEHQkdLpkExQ', 'https://www.tikamoon.es']
+              var i = Math.floor(Math.random() * imagenes.length); 
+function cambiar(){
+                if (i >= imagenes.length-1) i=0;
+                else i++;
+                document.getElementById('enlace').href=enlaces[i];
+                document.getElementById('orden').src=imagenes[i];
+                setTimeout(cambiar,3000)
+            }
+function entra(){
+                document.getElementById('enlace').href=enlaces[i];
+                document.getElementById('orden').src=imagenes[i];
+            }
+function imgf(){
+    document.getElementById('enlace').href=enlaces[i];
+    document.getElementById('orden').src=imagenes[i];}  
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 15</title>
+</head>
+<body>
+    <h1>Adivina un número entre 1 y 10:</h1>
+<input id="entrada" type="textbox" placeholder="Escribe número:">
+<button id="boton" onclick="comprueba()">¡Probar!</button>
+<p id="resultado"></p>
+<script>
+let numero=  Math.floor(Math.random() * 10) + 1;
+console.log(numero);
+
+function comprueba() {
+let entrada=document.getElementById("entrada").value;
+if (entrada>numero)
+{
+document.getElementById("resultado").innerHTML = "Lo siento, el número era menor...";
+}
+else if(entrada==numero)
+{
+document.getElementById("resultado").innerHTML ="¡Acertaste!";
+}
+else {
+document.getElementById("resultado").innerHTML = "Lo sentimos, el número era mayor...";
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+#banner {
+    position: fixed;
+    background-color: rgba(0,74,173,255);
+    padding-right: 100%;
+}
+#hueco {
+    width: 100%;
+    height: 110px;
+    background-color: rgba(0,74,173,255);
+    float:left;
+    top: 0px;
+    z-index:-1;
+    
+}
+#caja1 {
+    width: 33%;
+    height: auto;
+    background-color: black;
+    color: white;
+    border: 2px dotted blue;
+    float:left;
+    z-index:-2;
+    
+}
+
+#caja2 {
+    width: 33%;
+    height: auto;
+    background-color: gray;
+    color: white;
+    border: 2px solid black;
+    float:left;
+    z-index:-2;
+    
+}
+#caja3 {
+    width: 33%;
+    height: auto;
+    background-color: white;
+    border: 2px solid gray;
+    color: black;
+    float:left;
+    z-index:-2;
+    
+}
+
